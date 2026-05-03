@@ -17,9 +17,9 @@
   --r:#b83030;--rl:#fde8e8;
   --a:#1e4a8a;--al:#ddeeff;
   --o:#c46a10;--ol:#fef0dc;
-  --bg:#f0ede6;--card:#fafaf5;
-  --tx:#1a1a14;--tx2:#6a6a58;--bd:#dedad0;
-  --sh:0 2px 12px rgba(27,61,12,.10);--rad:12px;
+  --bg:#1a2e0f;--card:#243d14;
+  --tx:#f0f5e8;--tx2:#a8c088;--bd:#3a5a20;
+  --sh:0 2px 12px rgba(0,0,0,.40);--rad:12px;
   /* MÓVIL */
   --tap:48px; /* altura mínima toque */
 }
@@ -82,20 +82,20 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;gap
 /* ETO */
 .eg{display:grid;grid-template-columns:repeat(10,minmax(72px,1fr));gap:5px;margin-top:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
 .ed{border:1px solid var(–bd);border-radius:9px;padding:10px;text-align:center;}
-.ed.hoy{background:var(–g5);border-color:var(–g3);}
+.ed.hoy{background:#2a5a14;border-color:var(–g4);}
 .ed .f{font-size:.55rem;color:var(–tx2);text-transform:uppercase;}
 .ed .v{font-family:‘DM Mono’,monospace;font-size:.95rem;color:var(–g1);font-weight:500;}
 .ed .c{font-size:.68rem;color:var(–t);}
 
 /* ALERTAS */
 .al{border-radius:10px;padding:12px 14px;margin-bottom:9px;display:flex;gap:9px;align-items:flex-start;font-size:.85rem;line-height:1.5;}
-.al-r{background:var(–rl);border-left:4px solid var(–r);color:#7a1a1a;}
-.al-o{background:var(–ol);border-left:4px solid var(–o);color:#7a3a08;}
-.al-g{background:#e6f5dc;border-left:4px solid var(–g4);color:var(–g1);}
-.al-b{background:var(–al);border-left:4px solid var(–a);color:var(–a);}
+.al-r{background:#3a0808;border-left:4px solid var(–r);color:#f0a0a0;}
+.al-o{background:#3a2008;border-left:4px solid var(–o);color:#f0c080;}
+.al-g{background:#1a3a0a;border-left:4px solid var(–g4);color:#c8e8a0;}
+.al-b{background:#0a1a3a;border-left:4px solid var(–a);color:#80b0f0;}
 
 /* RIESGO */
-.re{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-radius:10px;border:1px solid var(–bd);margin-bottom:8px;background:var(–card);}
+.re{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-radius:10px;border:1px solid var(–bd);margin-bottom:8px;background:#1e3510;}
 .re-i .n{font-weight:600;font-size:.84rem;}
 .re-i .s{font-size:.67rem;color:var(–tx2);}
 .rebar{height:8px;border-radius:4px;background:#e8e8e0;margin:5px 0;overflow:hidden;width:130px;}
@@ -115,7 +115,7 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;gap
 .fr{margin-bottom:11px;}
 .fr label{display:block;font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(–tx2);margin-bottom:4px;}
 .fr input,.fr select,.fr textarea{width:100%;padding:11px 13px;border:1.5px solid var(–bd);border-radius:10px;
-font-family:‘DM Sans’,sans-serif;font-size:1rem;background:var(–bg);color:var(–tx);transition:border-color .2s;
+font-family:‘DM Sans’,sans-serif;font-size:1rem;background:#1e3510;color:var(–tx);transition:border-color .2s;
 min-height:var(–tap);-webkit-appearance:none;appearance:none;}
 .fr input:focus,.fr select:focus,.fr textarea:focus{outline:none;border-color:var(–g3);}
 .fr textarea{min-height:80px;resize:vertical;}
@@ -124,12 +124,12 @@ min-height:var(–tap);-webkit-appearance:none;appearance:none;}
 
 /* MULTI PRODUCTO */
 .plist{border:1.5px solid var(–bd);border-radius:9px;overflow:hidden;margin-bottom:11px;}
-.pitem{padding:10px 13px;border-bottom:1px solid var(–bd);background:var(–card);display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.pitem{padding:10px 13px;border-bottom:1px solid var(–bd);background:#1e3510;display:flex;justify-content:space-between;align-items:center;gap:8px;}
 .pitem:last-child{border-bottom:none;}
 .pitem .pn{font-weight:600;font-size:.82rem;}
 .pitem .pd{font-size:.7rem;color:var(–tx2);}
-.ecomb{background:#e6f5dc;border:1px solid var(–g4);border-radius:9px;padding:11px 13px;
-font-size:.79rem;color:var(–g1);margin-bottom:11px;display:none;line-height:1.55;}
+.ecomb{background:#1a3a0a;border:1px solid var(–g4);border-radius:9px;padding:11px 13px;
+font-size:.79rem;color:#c8e8a0;margin-bottom:11px;display:none;line-height:1.55;}
 .ecomb strong{display:block;margin-bottom:5px;font-size:.67rem;text-transform:uppercase;letter-spacing:.06em;color:var(–g2);}
 
 /* BOTONES */
@@ -141,13 +141,13 @@ font-size:.79rem;color:var(–g1);margin-bottom:11px;display:none;line-height:1.
 /* COSTES */
 .cg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:13px;}
 @media(min-width:480px){.cg{grid-template-columns:repeat(4,1fr);}}
-.cb{border:1px solid var(–bd);border-radius:10px;padding:12px;text-align:center;}
+.cb{border:1px solid var(–bd);border-radius:10px;padding:12px;text-align:center;background:#1e3510;}
 .cb .v{font-family:‘DM Mono’,monospace;font-size:1.15rem;font-weight:600;color:var(–g2);}
 .cb .l{font-size:.6rem;color:var(–tx2);margin-top:3px;text-transform:uppercase;}
 .cb.cr .v{color:var(–r);}.cb.co .v{color:var(–o);}
 
 /* HISTORIAL */
-.hi{border:1px solid var(–bd);border-radius:10px;padding:13px;margin-bottom:10px;background:var(–card);}
+.hi{border:1px solid var(–bd);border-radius:10px;padding:13px;margin-bottom:10px;background:#1e3510;}
 .hi-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
 .hi-t{font-weight:600;font-size:.84rem;}
 .hi-m{font-size:.71rem;color:var(–tx2);margin-top:3px;line-height:1.5;}
@@ -155,14 +155,14 @@ font-size:.79rem;color:var(–g1);margin-bottom:11px;display:none;line-height:1.
 
 /* BADGES */
 .bx{display:inline-block;padding:2px 8px;border-radius:20px;font-size:.61rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-right:3px;}
-.br{background:var(–rl);color:var(–r);}.bo{background:var(–ol);color:var(–o);}
-.bg{background:#e6f5dc;color:var(–g2);}.bb{background:var(–al);color:var(–a);}
-.bt{background:var(–tl);color:var(–t);}
+.br{background:#3a0808;color:#f08080;}.bo{background:#3a1a08;color:#f0a050;}
+.bg{background:#2a5a14;color:#c8e8a0;}.bb{background:#0a1a4a;color:#80b0f0;}
+.bt{background:#3a2808;color:#d4a060;}
 
 /* GREENES */
 .gg{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;}
 @media(min-width:400px){.gg{grid-template-columns:repeat(7,1fr);}}
-.gb{border:2px solid var(–bd);border-radius:10px;padding:12px 3px;text-align:center;cursor:pointer;background:var(–card);transition:all .15s;user-select:none;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;-webkit-user-select:none;}
+.gb{border:2px solid var(–bd);border-radius:10px;padding:12px 3px;text-align:center;cursor:pointer;background:#1e3510;transition:all .15s;user-select:none;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;-webkit-user-select:none;}
 .gb:hover{border-color:var(–g3);}
 .gb.seca{background:var(–rl);border-color:var(–r);color:var(–r);}
 .gb.atento{background:var(–ol);border-color:var(–o);}
@@ -356,13 +356,13 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
 
   <div class="st">Historial</div>
   <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
-    <select id="m-ft" onchange="renderMaq()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
+    <select id="m-ft" onchange="renderMaq()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:#243d14;color:var(--tx);">
       <option value="">Todo</option>
       <option value="reparacion">Reparaciones</option>
       <option value="mantenimiento">Mantenimiento</option>
       <option value="revision">Revisiones</option>
     </select>
-    <select id="m-fa" onchange="renderMaq()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
+    <select id="m-fa" onchange="renderMaq()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:#243d14;color:var(--tx);">
       <option value="">Todos los años</option>
       <option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option>
     </select>
@@ -642,7 +642,7 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
   <div class="card">
     <div class="ch">📊 Resumen de Abonado</div>
     <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
-      <select id="ab-filtro-zona" onchange="renderAbonado()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
+      <select id="ab-filtro-zona" onchange="renderAbonado()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:#243d14;color:var(--tx);">
         <option value="">Todas las zonas</option>
         <option value="greenes">Greenes</option>
         <option value="antegreenes">Antegreenes</option>
@@ -650,7 +650,7 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
         <option value="calles">Calles</option>
         <option value="rough">Rough</option>
       </select>
-      <select id="ab-filtro-anio" onchange="renderAbonado()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
+      <select id="ab-filtro-anio" onchange="renderAbonado()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:#243d14;color:var(--tx);">
         <option value="">Todos los años</option>
         <option value="2026">2026</option><option value="2025">2025</option>
       </select>
