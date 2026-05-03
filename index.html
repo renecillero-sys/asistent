@@ -164,10 +164,10 @@ font-size:.79rem;color:#2d5a1a;margin-bottom:11px;display:none;line-height:1.55;
 @media(min-width:400px){.gg{grid-template-columns:repeat(7,1fr);}}
 .gb{border:2px solid #5a8a35;border-radius:10px;padding:12px 3px;text-align:center;cursor:pointer;background:#1e3510;transition:all .15s;user-select:none;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;-webkit-user-select:none;}
 .gb:hover{border-color:var(–g3);}
-.gb.seca{background:var(–rl);border-color:var(–r);color:var(–r);}
-.gb.atento{background:var(–ol);border-color:var(–o);}
-.gb .gn{font-family:‘DM Mono’,monospace;font-size:1rem;font-weight:600;}
-.gb .gs{font-size:.53rem;margin-top:2px;}
+.gb.seca{background:#fde8e8;border-color:#c03030;color:#c03030;}
+.gb.atento{background:#fef0dc;border-color:#c46a10;}
+.gb .gn{font-family:‘DM Mono’,monospace;font-size:1.1rem;font-weight:700;color:#1a4a0a;}
+.gb .gs{font-size:.55rem;margin-top:2px;color:#5a8a30;font-weight:600;}
 
 /* TDR */
 .tg{display:grid;grid-template-columns:1fr;gap:11px;margin-bottom:11px;}
@@ -235,24 +235,52 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
 
 <div class="pg on" id="pg-inicio">
 
-  <div class="card">
-    <div class="ch">🌡 Meteorología — Sojuela, La Rioja</div>
-    <div id="m-loading" class="spin-w"><div class="spin"></div>Leyendo Open-Meteo (42.36°N 2.55°O)...</div>
+  <div class="card" style="padding:0;overflow:hidden;">
+    <div class="ch" style="margin:0;padding:12px 16px;border-radius:11px 11px 0 0;">🌤 Meteorología — Sojuela, La Rioja</div>
+    <div id="m-loading" class="spin-w" style="padding:16px"><div class="spin"></div>Leyendo Open-Meteo...</div>
     <div id="m-body" style="display:none">
-      <div class="mg">
-        <div class="ms a"><div class="ms-v" id="m-tmed">--</div><div class="ms-l">T. Media °C</div></div>
-        <div class="ms b"><div class="ms-v" id="m-tmax">--</div><div class="ms-l">T. Máx °C</div></div>
-        <div class="ms c"><div class="ms-v" id="m-tmin">--</div><div class="ms-l">T. Mín °C</div></div>
-        <div class="ms d"><div class="ms-v" id="m-hum">--</div><div class="ms-l">Humedad %</div></div>
+      <!-- TEMPERATURA PRINCIPAL -->
+      <div style="background:linear-gradient(135deg,#2d5a1a 0%,#4a8a28 100%);padding:20px 16px 16px;text-align:center;color:#fff;">
+        <div style="font-family:'DM Mono',monospace;font-size:3.2rem;font-weight:500;line-height:1;" id="m-tmed">--</div>
+        <div style="font-size:.75rem;opacity:.8;margin-top:4px;letter-spacing:.06em;">TEMPERATURA MEDIA °C</div>
+        <div style="display:flex;justify-content:center;gap:20px;margin-top:12px;">
+          <div style="text-align:center;">
+            <div style="font-family:'DM Mono',monospace;font-size:1.3rem;" id="m-tmax">--</div>
+            <div style="font-size:.6rem;opacity:.75;">MÁX °C</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,.3);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:'DM Mono',monospace;font-size:1.3rem;" id="m-tmin">--</div>
+            <div style="font-size:.6rem;opacity:.75;">MÍN °C</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,.3);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:'DM Mono',monospace;font-size:1.3rem;" id="m-hum">--</div>
+            <div style="font-size:.6rem;opacity:.75;">HR %</div>
+          </div>
+        </div>
       </div>
-      <div class="mg2">
-        <div class="mb"><div class="mb-v" id="m-lluv">--</div><div class="mb-l">☔ Lluvia mm</div></div>
-        <div class="mb"><div class="mb-v" id="m-vien">--</div><div class="mb-l">💨 Viento km/h</div></div>
-        <div class="mb"><div class="mb-v" id="m-rocio">--</div><div class="mb-l">🌫 Rocío °C</div></div>
+      <!-- DATOS SECUNDARIOS -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#d0e8b8;">
+        <div style="background:#f8fdf4;padding:11px 8px;text-align:center;">
+          <div style="font-size:1.3rem;">☔</div>
+          <div style="font-family:'DM Mono',monospace;font-size:.95rem;color:#1a3a0a;font-weight:600;" id="m-lluv">--</div>
+          <div style="font-size:.58rem;color:#5a7a40;margin-top:2px;text-transform:uppercase;">Lluvia mm</div>
+        </div>
+        <div style="background:#f8fdf4;padding:11px 8px;text-align:center;">
+          <div style="font-size:1.3rem;">💨</div>
+          <div style="font-family:'DM Mono',monospace;font-size:.95rem;color:#1a3a0a;font-weight:600;" id="m-vien">--</div>
+          <div style="font-size:.58rem;color:#5a7a40;margin-top:2px;text-transform:uppercase;">Viento km/h</div>
+        </div>
+        <div style="background:#f8fdf4;padding:11px 8px;text-align:center;">
+          <div style="font-size:1.3rem;">🌫</div>
+          <div style="font-family:'DM Mono',monospace;font-size:.95rem;color:#1a3a0a;font-weight:600;" id="m-rocio">--</div>
+          <div style="font-size:.58rem;color:#5a7a40;margin-top:2px;text-transform:uppercase;">Rocío °C</div>
+        </div>
       </div>
-      <div class="src-note" id="m-ts">—</div>
+      <div class="src-note" style="padding:6px 12px 8px;" id="m-ts">—</div>
     </div>
-    <div id="m-err" style="display:none;color:var(--r);font-size:.79rem;padding:8px 0">
+    <div id="m-err" style="display:none;color:var(--r);font-size:.79rem;padding:12px 16px;">
       ⚠️ No se pudo cargar Open-Meteo. Comprueba la conexión a internet.
     </div>
   </div>
