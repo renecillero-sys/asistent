@@ -7,7 +7,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#1b3d0c">
+<meta name="theme-color" content="#2d5a1a">
 <title>⛳ Greenkeeper — Golf Sojuela</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -20,20 +20,18 @@
   --bg:#f0f7ec;--card:#ffffff;
   --tx:#1a3a0a;--tx2:#5a7a40;--bd:#b8d8a0;
   --sh:0 2px 10px rgba(60,100,30,.12);--rad:12px;
-  /* MÓVIL */
-  --tap:48px; /* altura mínima toque */
+  --tap:48px;
 }
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-html{-webkit-text-size-adjust:100%;}
+*{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-size:15px;min-height:100vh;
-  padding-bottom:env(safe-area-inset-bottom);
-  padding-left:env(safe-area-inset-left);
-  padding-right:env(safe-area-inset-right);}
+  padding-bottom:env(safe-area-inset-bottom);}
+*{-webkit-tap-highlight-color:transparent;}
+html{-webkit-text-size-adjust:100%;}
 
 /* HEADER */
 .hdr{background:linear-gradient(135deg,#2d5a1a 0%,#4a8a28 100%);color:#fff;padding:10px 14px 0;position:sticky;top:0;z-index:200;box-shadow:0 4px 24px rgba(0,0,0,.22);}
 .hdr-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;}
-.logo{font-family:‘Playfair Display’,serif;font-size:1.1rem;letter-spacing:.01em;}
+.logo{font-family:‘Playfair Display’,serif;font-size:1.22rem;letter-spacing:.01em;}
 .logo em{color:var(–g4);font-style:italic;}
 .reloj{font-family:‘DM Mono’,monospace;font-size:.66rem;text-align:right;opacity:.72;line-height:1.55;}
 .src-row{font-size:.63rem;opacity:.82;margin-bottom:7px;display:flex;align-items:center;gap:5px;}
@@ -43,20 +41,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-
 
 /* TABS */
 .tabs{display:flex;border-top:1px solid rgba(255,255,255,.1);overflow-x:hidden;}
-.tab{flex:1;padding:8px 2px;background:none;border:none;color:rgba(255,255,255,.52);
+.tab{flex:1;padding:8px 2px;background:none;border:none;color:rgba(255,255,255,.55);
 font-family:‘DM Sans’,sans-serif;font-weight:700;cursor:pointer;
 border-bottom:3px solid transparent;transition:all .15s;
-display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;}
+display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:48px;}
 .tab.on{color:#fff;border-bottom-color:var(–g4);}
 .tab-ico{font-size:1.3rem;line-height:1;}
-/* Texto OCULTO en móvil — solo emoji */
 .tab-lbl{display:none;}
-/* Texto VISIBLE en pantallas >= 500px */
-@media(min-width:500px){
-.tab-lbl{display:block;font-size:.58rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}
-.tab-ico{font-size:1rem;}
-.tab{padding:10px 4px;}
-}
+@media(min-width:500px){.tab-lbl{display:block;font-size:.55rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}.tab-ico{font-size:1rem;}.tab{padding:10px 4px;}}
 
 /* PÁGINAS */
 .pg{display:none;padding:12px;max-width:860px;margin:0 auto;animation:fi .2s ease;}
@@ -64,8 +56,9 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;gap
 @keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 
 /* CARD */
-.card{background:#ffffff;border-radius:var(–rad);padding:14px 13px;box-shadow:var(–sh);border:1.5px solid #c8e0b0;margin-bottom:12px;}
-.ch{font-family:‘Playfair Display’,serif;font-size:.98rem;color:#2d5a1a;margin-bottom:12px;display:flex;align-items:center;gap:8px;background:#e8f5d8;margin:-14px -13px 12px;padding:12px 13px;border-radius:11px 11px 0 0;border-bottom:1.5px solid #c8e0b0;}
+.card{background:#ffffff;border-radius:var(–rad);padding:0;box-shadow:var(–sh);border:1.5px solid #c8e0b0;margin-bottom:12px;overflow:hidden;}
+.ch{font-family:‘Playfair Display’,serif;font-size:.9rem;color:#2d5a1a;margin:0;padding:11px 13px;display:flex;align-items:center;gap:8px;background:#e8f5d8;border-bottom:1.5px solid #c8e0b0;}
+.card-body{padding:14px 13px;}
 
 /* GRIDS METEO */
 .mg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:11px;}
@@ -83,29 +76,29 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;gap
 .eg{display:grid;grid-template-columns:repeat(10,minmax(72px,1fr));gap:5px;margin-top:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
 .ed{border:1.5px solid #b0d090;border-radius:9px;padding:10px;text-align:center;background:#f8fdf4;}
 .ed.hoy{background:#d4f0b8;border-color:#5a9a30;border-width:2px;}
-.ed .f{font-size:.55rem;color:#5a7a40;text-transform:uppercase;}
-.ed .v{font-family:‘DM Mono’,monospace;font-size:.95rem;color:#1a3a0a;font-weight:500;}
+.ed .f{font-size:.55rem;color:var(–tx2);text-transform:uppercase;}
+.ed .v{font-family:‘DM Mono’,monospace;font-size:.95rem;color:var(–g1);font-weight:500;}
 .ed .c{font-size:.68rem;color:var(–t);}
 
 /* ALERTAS */
-.al{border-radius:10px;padding:12px 14px;margin-bottom:9px;display:flex;gap:9px;align-items:flex-start;font-size:.85rem;line-height:1.5;}
-.al-r{background:#fde8e8;border-left:4px solid var(–r);color:#7a1a1a;}
-.al-o{background:#fef3e2;border-left:4px solid var(–o);color:#7a3a08;}
+.al{border-radius:9px;padding:10px 13px;margin-bottom:8px;display:flex;gap:9px;align-items:flex-start;font-size:.79rem;line-height:1.45;}
+.al-r{background:var(–rl);border-left:4px solid var(–r);color:#7a1a1a;}
+.al-o{background:var(–ol);border-left:4px solid var(–o);color:#7a3a08;}
 .al-g{background:#e8f5d8;border-left:4px solid #5a9a30;color:#2d5a1a;}
-.al-b{background:#e8f0fd;border-left:4px solid var(–a);color:#1a3a7a;}
+.al-b{background:var(–al);border-left:4px solid var(–a);color:var(–a);}
 
 /* RIESGO */
 .re{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-radius:10px;border:1.5px solid #c8e0b0;margin-bottom:8px;background:#f8fdf4;}
-.re-i .n{font-weight:600;font-size:.84rem;color:#1a3a0a;}
-.re-i .s{font-size:.67rem;color:#4a6a30;}
+.re-i .n{font-weight:600;font-size:.84rem;}
+.re-i .s{font-size:.67rem;color:var(–tx2);}
 .rebar{height:8px;border-radius:4px;background:#e8e8e0;margin:5px 0;overflow:hidden;width:130px;}
 .refill{height:100%;border-radius:4px;transition:width .6s;}
 .rfbajo{background:var(–g4);}.rfmedio{background:var(–o);}.rfalto{background:var(–r);}
 .repct{font-family:‘DM Mono’,monospace;font-size:1.28rem;font-weight:500;min-width:46px;text-align:right;}
 
 /* PREVISION */
-.pv{display:grid;grid-template-columns:repeat(7,minmax(70px,1fr));gap:5px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
-.pvd{border:1.5px solid #b0d090;border-radius:9px;padding:9px 4px;text-align:center;background:#f8fdf4;}
+.pv{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;}
+.pvd{border:1px solid var(–bd);border-radius:9px;padding:9px 4px;text-align:center;}
 .pvd .dia{font-size:.55rem;text-transform:uppercase;color:var(–tx2);}
 .pvd .ico{font-size:1.3rem;margin:4px 0;}
 .pvd .t{font-family:‘DM Mono’,monospace;font-size:.68rem;}
@@ -114,60 +107,59 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;gap
 /* FORMS */
 .fr{margin-bottom:11px;}
 .fr label{display:block;font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(–tx2);margin-bottom:4px;}
-.fr input,.fr select,.fr textarea{width:100%;padding:11px 13px;border:1.5px solid #b0d090;border-radius:10px;
-font-family:‘DM Sans’,sans-serif;font-size:1rem;background:#f8fdf4;color:#1a3a0a;transition:border-color .2s;
-min-height:var(–tap);-webkit-appearance:none;appearance:none;}
-.fr input:focus,.fr select:focus,.fr textarea:focus{outline:none;border-color:var(–g3);}
-.fr textarea{min-height:80px;resize:vertical;}
+.fr input,.fr select,.fr textarea{width:100%;padding:9px 11px;border:1.5px solid var(–bd);border-radius:9px;
+font-family:‘DM Sans’,sans-serif;font-size:.84rem;background:var(–bg);color:var(–tx);transition:border-color .2s;}
+.fr input:focus,.fr select:focus,.fr textarea:focus{outline:none;border-color:#5a9a30;background:#fff;}
+.fr textarea{min-height:62px;resize:vertical;}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 @media(max-width:380px){.fg{grid-template-columns:1fr;}}
 
 /* MULTI PRODUCTO */
-.plist{border:2px solid #4a7a28;border-radius:9px;overflow:hidden;margin-bottom:11px;}
-.pitem{padding:10px 13px;border-bottom:1px solid #d0e8b8;background:#f8fdf4;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.plist{border:1.5px solid var(–bd);border-radius:9px;overflow:hidden;margin-bottom:11px;}
+.pitem{padding:10px 13px;border-bottom:1px solid var(–bd);background:var(–card);display:flex;justify-content:space-between;align-items:center;gap:8px;}
 .pitem:last-child{border-bottom:none;}
-.pitem .pn{font-weight:600;font-size:.82rem;color:#1a3a0a;}
-.pitem .pd{font-size:.7rem;color:#4a6a30;}
-.ecomb{background:#e8f5d8;border:1px solid #90c060;border-radius:9px;padding:11px 13px;
-font-size:.79rem;color:#2d5a1a;margin-bottom:11px;display:none;line-height:1.55;}
+.pitem .pn{font-weight:600;font-size:.82rem;}
+.pitem .pd{font-size:.7rem;color:var(–tx2);}
+.ecomb{background:#e6f5dc;border:1px solid var(–g4);border-radius:9px;padding:11px 13px;
+font-size:.79rem;color:var(–g1);margin-bottom:11px;display:none;line-height:1.55;}
 .ecomb strong{display:block;margin-bottom:5px;font-size:.67rem;text-transform:uppercase;letter-spacing:.06em;color:var(–g2);}
 
 /* BOTONES */
 .btn{padding:14px 22px;border:none;border-radius:11px;font-family:‘DM Sans’,sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .15s;min-height:var(–tap);width:100%;margin-top:6px;}
-.btng{background:var(–g1);color:#fff;}.btng:hover{background:var(–g2);}
+.btng{background:#2d5a1a;color:#fff;}.btng:hover{background:#4a8a28;}.btng:active{opacity:.85;}
 .btns{padding:9px 14px;font-size:.75rem;border:none;border-radius:8px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:600;min-height:40px;}
 .btndel{background:var(–rl);color:var(–r);}
 
 /* COSTES */
 .cg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:13px;}
 @media(min-width:480px){.cg{grid-template-columns:repeat(4,1fr);}}
-.cb{border:1.5px solid #c8e0b0;border-radius:10px;padding:12px;text-align:center;background:#f0f9e8;}
-.cb .v{font-family:‘DM Mono’,monospace;font-size:1.15rem;font-weight:600;color:#2d5a1a;}
-.cb .l{font-size:.6rem;color:#5a8a38;margin-top:3px;text-transform:uppercase;}
+.cb{border:1px solid var(–bd);border-radius:10px;padding:12px;text-align:center;}
+.cb .v{font-family:‘DM Mono’,monospace;font-size:1.3rem;font-weight:500;color:var(–g2);}
+.cb .l{font-size:.6rem;color:var(–tx2);margin-top:3px;text-transform:uppercase;}
 .cb.cr .v{color:var(–r);}.cb.co .v{color:var(–o);}
 
 /* HISTORIAL */
 .hi{border:1.5px solid #c8e0b0;border-radius:10px;padding:13px;margin-bottom:10px;background:#f8fdf4;}
 .hi-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
-.hi-t{font-weight:600;font-size:.84rem;color:#1a3a0a;}
-.hi-m{font-size:.71rem;color:#5a7a40;margin-top:3px;line-height:1.5;}
+.hi-t{font-weight:600;font-size:.84rem;}
+.hi-m{font-size:.71rem;color:var(–tx2);margin-top:3px;line-height:1.5;}
 .hi-f{font-family:‘DM Mono’,monospace;font-size:.64rem;color:var(–tx2);white-space:nowrap;}
 
 /* BADGES */
 .bx{display:inline-block;padding:2px 8px;border-radius:20px;font-size:.61rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-right:3px;}
-.br{background:#fde8e8;color:#b83030;}.bo{background:#fef0dc;color:#c46a10;}
-.bg{background:#d8f0c0;color:#2d5a1a;}.bb{background:#ddeeff;color:#1e4a8a;}
-.bt{background:#3a2808;color:#d4a060;}
+.br{background:var(–rl);color:var(–r);}.bo{background:var(–ol);color:var(–o);}
+.bg{background:#e6f5dc;color:var(–g2);}.bb{background:var(–al);color:var(–a);}
+.bt{background:var(–tl);color:var(–t);}
 
 /* GREENES */
-.gg{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;}
+.gg{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
 @media(min-width:400px){.gg{grid-template-columns:repeat(7,1fr);}}
-.gb{border:2px solid #5a8a35;border-radius:10px;padding:12px 3px;text-align:center;cursor:pointer;background:#1e3510;transition:all .15s;user-select:none;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;-webkit-user-select:none;}
+.gb{border:2px solid #5a9a30;border-radius:10px;padding:10px 3px;text-align:center;cursor:pointer;background:#ffffff;transition:all .15s;user-select:none;-webkit-user-select:none;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .gb:hover{border-color:var(–g3);}
 .gb.seca{background:#fde8e8;border-color:#c03030;color:#c03030;}
 .gb.atento{background:#fef0dc;border-color:#c46a10;}
-.gb .gn{font-family:‘DM Mono’,monospace;font-size:1.1rem;font-weight:700;color:#1a4a0a;}
-.gb .gs{font-size:.55rem;margin-top:2px;color:#5a8a30;font-weight:600;}
+.gb .gn{font-family:‘DM Mono’,monospace;font-size:.93rem;font-weight:500;}
+.gb .gs{font-size:.53rem;margin-top:2px;}
 
 /* TDR */
 .tg{display:grid;grid-template-columns:1fr;gap:11px;margin-bottom:11px;}
@@ -177,37 +169,27 @@ font-size:.79rem;color:#2d5a1a;margin-bottom:11px;display:none;line-height:1.55;
 .trng{display:flex;justify-content:space-between;font-size:.57rem;color:var(–tx2);}
 
 /* MISC */
-.st{font-size:.63rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#5a8a38;margin:16px 0 8px;padding-bottom:4px;border-bottom:2px solid #c8e0b0;}
+.st{font-size:.63rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(–tx2);margin:16px 0 8px;padding-bottom:4px;border-bottom:1px solid var(–bd);}
 .spin-w{display:flex;align-items:center;gap:8px;color:var(–tx2);font-size:.79rem;padding:8px 0;}
 .spin{width:14px;height:14px;border:2px solid var(–bd);border-top-color:var(–g3);border-radius:50%;animation:sp .7s linear infinite;}
 @keyframes sp{to{transform:rotate(360deg)}}
 .src-note{font-size:.61rem;color:var(–tx2);text-align:right;margin-top:6px;}
 
-/* ══ OPTIMIZACIONES MÓVIL EXTRA ══ */
-@media (max-width: 480px) {
-.fg{grid-template-columns:1fr;}
-.ms-v{font-size:1.35rem;}
-.mg{gap:7px;}
-.ms{padding:11px 8px;}
-.pv-d .t{font-size:.65rem;}
-.pvd .t{font-size:.65rem;}
-.hi-top{flex-direction:column;gap:8px;}
-.hi-top > div:last-child{flex-direction:row !important;align-self:flex-end;}
-.fr label{font-size:.72rem;}
-.ch{font-size:.93rem;}
+/* ══ MÓVIL EXTRA ══ */
+@media(max-width:480px){
+.fg{grid-template-columns:1fr !important;}
+.ch{font-size:.86rem;}
 .btn{font-size:.9rem;}
 select option{font-size:16px;}
 }
-/* Evita zoom en iOS al hacer focus en inputs */
-input, select, textarea {font-size:max(16px, 1em) !important;}
-/* Scrollbar invisible en horizontal */
+input,select,textarea{font-size:max(16px,1em)!important;}
 .eg::-webkit-scrollbar,.pv::-webkit-scrollbar{display:none;}
 .eg,.pv{scrollbar-width:none;}
-/* Active state táctil */
 .btn:active{opacity:.85;transform:scale(.98);}
 .tab:active{opacity:.7;}
 .gb:active{transform:scale(.94);}
 .btns:active{opacity:.75;}
+.st{color:#5a8a38 !important;border-bottom:2px solid #c8e0b0 !important;}
 </style>
 
 </head>
@@ -225,9 +207,10 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
   <div class="tabs">
     <button class="tab on" data-tab="inicio"><span class="tab-ico">🌤</span><span class="tab-lbl">Inicio</span></button>
     <button class="tab" data-tab="maquinaria"><span class="tab-ico">🔧</span><span class="tab-lbl">Máquinas</span></button>
-    <button class="tab" data-tab="fito"><span class="tab-ico">🌿</span><span class="tab-lbl">Fitosanit.</span></button>
-    <button class="tab" data-tab="abonado"><span class="tab-ico">🌾</span><span class="tab-lbl">Abonado</span></button>
+    <button class="tab" data-tab="tratamientos"><span class="tab-ico">🌿</span><span class="tab-lbl">Tratam.</span></button>
+    <button class="tab" data-tab="enfermedades"><span class="tab-ico">🦠</span><span class="tab-lbl">Enfermed.</span></button>
     <button class="tab" data-tab="riego"><span class="tab-ico">💧</span><span class="tab-lbl">Riego</span></button>
+    <button class="tab" data-tab="personal"><span class="tab-ico">👤</span><span class="tab-lbl">Personal</span></button>
   </div>
 </div>
 
@@ -235,52 +218,24 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
 
 <div class="pg on" id="pg-inicio">
 
-  <div class="card" style="padding:0;overflow:hidden;">
-    <div class="ch" style="margin:0;padding:12px 16px;border-radius:11px 11px 0 0;">🌤 Meteorología — Sojuela, La Rioja</div>
-    <div id="m-loading" class="spin-w" style="padding:16px"><div class="spin"></div>Leyendo Open-Meteo...</div>
+  <div class="card">
+    <div class="ch">🌡 Meteorología — Sojuela, La Rioja</div>
+    <div id="m-loading" class="spin-w"><div class="spin"></div>Leyendo Open-Meteo (42.36°N 2.55°O)...</div>
     <div id="m-body" style="display:none">
-      <!-- TEMPERATURA PRINCIPAL -->
-      <div style="background:linear-gradient(135deg,#2d5a1a 0%,#4a8a28 100%);padding:20px 16px 16px;text-align:center;color:#fff;">
-        <div style="font-family:'DM Mono',monospace;font-size:3.2rem;font-weight:500;line-height:1;" id="m-tmed">--</div>
-        <div style="font-size:.75rem;opacity:.8;margin-top:4px;letter-spacing:.06em;">TEMPERATURA MEDIA °C</div>
-        <div style="display:flex;justify-content:center;gap:20px;margin-top:12px;">
-          <div style="text-align:center;">
-            <div style="font-family:'DM Mono',monospace;font-size:1.3rem;" id="m-tmax">--</div>
-            <div style="font-size:.6rem;opacity:.75;">MÁX °C</div>
-          </div>
-          <div style="width:1px;background:rgba(255,255,255,.3);"></div>
-          <div style="text-align:center;">
-            <div style="font-family:'DM Mono',monospace;font-size:1.3rem;" id="m-tmin">--</div>
-            <div style="font-size:.6rem;opacity:.75;">MÍN °C</div>
-          </div>
-          <div style="width:1px;background:rgba(255,255,255,.3);"></div>
-          <div style="text-align:center;">
-            <div style="font-family:'DM Mono',monospace;font-size:1.3rem;" id="m-hum">--</div>
-            <div style="font-size:.6rem;opacity:.75;">HR %</div>
-          </div>
-        </div>
+      <div class="mg">
+        <div class="ms a"><div class="ms-v" id="m-tmed">--</div><div class="ms-l">T. Media °C</div></div>
+        <div class="ms b"><div class="ms-v" id="m-tmax">--</div><div class="ms-l">T. Máx °C</div></div>
+        <div class="ms c"><div class="ms-v" id="m-tmin">--</div><div class="ms-l">T. Mín °C</div></div>
+        <div class="ms d"><div class="ms-v" id="m-hum">--</div><div class="ms-l">Humedad %</div></div>
       </div>
-      <!-- DATOS SECUNDARIOS -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#d0e8b8;">
-        <div style="background:#f8fdf4;padding:11px 8px;text-align:center;">
-          <div style="font-size:1.3rem;">☔</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.95rem;color:#1a3a0a;font-weight:600;" id="m-lluv">--</div>
-          <div style="font-size:.58rem;color:#5a7a40;margin-top:2px;text-transform:uppercase;">Lluvia mm</div>
-        </div>
-        <div style="background:#f8fdf4;padding:11px 8px;text-align:center;">
-          <div style="font-size:1.3rem;">💨</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.95rem;color:#1a3a0a;font-weight:600;" id="m-vien">--</div>
-          <div style="font-size:.58rem;color:#5a7a40;margin-top:2px;text-transform:uppercase;">Viento km/h</div>
-        </div>
-        <div style="background:#f8fdf4;padding:11px 8px;text-align:center;">
-          <div style="font-size:1.3rem;">🌫</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.95rem;color:#1a3a0a;font-weight:600;" id="m-rocio">--</div>
-          <div style="font-size:.58rem;color:#5a7a40;margin-top:2px;text-transform:uppercase;">Rocío °C</div>
-        </div>
+      <div class="mg2">
+        <div class="mb"><div class="mb-v" id="m-lluv">--</div><div class="mb-l">☔ Lluvia mm</div></div>
+        <div class="mb"><div class="mb-v" id="m-vien">--</div><div class="mb-l">💨 Viento km/h</div></div>
+        <div class="mb"><div class="mb-v" id="m-rocio">--</div><div class="mb-l">🌫 Rocío °C</div></div>
       </div>
-      <div class="src-note" style="padding:6px 12px 8px;" id="m-ts">—</div>
+      <div class="src-note" id="m-ts">—</div>
     </div>
-    <div id="m-err" style="display:none;color:var(--r);font-size:.79rem;padding:12px 16px;">
+    <div id="m-err" style="display:none;color:var(--r);font-size:.79rem;padding:8px 0">
       ⚠️ No se pudo cargar Open-Meteo. Comprueba la conexión a internet.
     </div>
   </div>
@@ -298,6 +253,8 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
     <div id="alertas-box"><div class="spin-w"><div class="spin"></div>Calculando modelos...</div></div>
     <div class="st" style="margin-top:14px">Modelos activos</div>
     <div id="modelos-box"></div>
+    <div class="st" style="margin-top:14px">📆 Previsión de riesgo — próximos 7 días</div>
+    <div id="prev-riesgo-box" style="font-size:.72rem;color:var(--tx2);padding:6px 0;">Calculando...</div>
     <div id="historial-alert"></div>
   </div>
 
@@ -384,13 +341,13 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
 
   <div class="st">Historial</div>
   <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
-    <select id="m-ft" onchange="renderMaq()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:#243d14;color:var(--tx);">
+    <select id="m-ft" onchange="renderMaq()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
       <option value="">Todo</option>
       <option value="reparacion">Reparaciones</option>
       <option value="mantenimiento">Mantenimiento</option>
       <option value="revision">Revisiones</option>
     </select>
-    <select id="m-fa" onchange="renderMaq()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:#243d14;color:var(--tx);">
+    <select id="m-fa" onchange="renderMaq()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
       <option value="">Todos los años</option>
       <option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option>
     </select>
@@ -398,24 +355,38 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
   <div id="hist-maq"></div>
 </div>
 
-<!-- ═══════════════ FITOSANITARIOS ═══════════════ -->
+<!-- ═══════════════ TRATAMIENTOS ═══════════════ -->
 
-<div class="pg" id="pg-fito">
+<div class="pg" id="pg-tratamientos">
   <div class="card">
-    <div class="ch">🌿 Registrar Aplicación</div>
+    <div class="ch">🧪 Preparar Cuba</div>
     <div class="fg">
-      <div class="fr"><label>Fecha</label><input type="date" id="f-fecha"></div>
+      <div class="fr"><label>Fecha</label><input type="date" id="t-fecha"></div>
       <div class="fr"><label>Zona</label>
-        <select id="f-zona">
-          <option>Greenes</option><option>Tees</option><option>Calles</option>
-          <option>Rough</option><option>Todo el campo</option><option>Zonas específicas</option>
+        <select id="t-zona">
+          <option value="greenes">Greenes (Agrostis stolonifera)</option>
+          <option value="antegreenes">Antegreenes (Lolium perenne)</option>
+          <option value="tees">Tees (Lolium perenne)</option>
+          <option value="calles">Calles (Lolium perenne)</option>
+          <option value="rough">Rough</option>
+          <option value="todo">Todo el campo</option>
+          <option value="zonas">Zonas específicas</option>
         </select>
       </div>
     </div>
-    <div class="fr">
-      <label>Añadir producto al caldo</label>
+    <div class="fg">
+      <div class="fr"><label>Superficie (Ha)</label><input type="number" id="t-sup" placeholder="ej: 1.0" step="0.1" min="0"></div>
+      <div class="fr"><label>Método aplicación</label>
+        <select id="t-metodo">
+          <option>Pulverizador — foliar</option><option>Fertirrigación</option>
+          <option>Drench</option><option>Granulado — esparcidora</option>
+        </select>
+      </div>
+    </div>
+    <div class="fr" style="margin-top:4px;">
+      <label>Añadir producto a la cuba</label>
       <div style="display:flex;gap:7px;">
-        <select id="f-psel" style="flex:1;padding:9px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.84rem;background:var(--bg);">
+        <select id="t-psel" style="flex:1;padding:9px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.84rem;background:var(--bg);">
           <option value="">— Seleccionar —</option>
           <optgroup label="🛡 Protección">
             <option value="bicarbonato">Bicarbonato Potásico (Agrovin) · 0.35 kg/Ha</option>
@@ -433,29 +404,73 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
             <option value="algae">Algae Green 500 (Algas) · según dosis</option>
             <option value="thpromotor">TH Promotor (Trichoderma) · según dosis</option>
           </optgroup>
+          <optgroup label="🌿 Abonos minerales">
+            <option value="org16-4-8">Organomineral 16-4-8 · 100 kg/Ha</option>
+            <option value="org11-0-0">Organomineral 11-0-0 · 100 kg/Ha</option>
+            <option value="solucion_npk">Solución NPK (fertirrigación)</option>
+          </optgroup>
+          <optgroup label="💊 Abonos solubles">
+            <option value="sulfato_amo">Sulfato Amónico 21-0-0 · 10 kg/Ha</option>
+            <option value="fosfato_mono">Fosfato Monoamónico · 4 kg/Ha</option>
+            <option value="nitrato_pot">Nitrato Potásico 13-0-46 · 10 kg/Ha</option>
+            <option value="sulfato_fe">Sulfato de Fe Soluble · 4 kg/Ha</option>
+            <option value="sulfato_mg">Sulfato de Mg Soluble · 2 kg/Ha</option>
+            <option value="mix_soluble">Mezcla solubles (especificar)</option>
+          </optgroup>
           <optgroup label="💧 Penetrantes / Reguladores">
             <option value="fsy_isp">FSY ISP (Servicentre) · 10 L/Ha</option>
             <option value="carfentrazol">Carfentrazol Etil · 0.18 L/Ha</option>
           </optgroup>
+          <optgroup label="⚗️ Fungicidas síntesis (emergencia)">
+            <option value="ascernity">Ascernity (Difenoconazol+Benzovindiflupir) — FRAC 3+7</option>
+            <option value="mystic">Mystic 250 EW (Tebuconazol) — FRAC 3</option>
+            <option value="brek">Brek (Tetraconazol) — FRAC 3</option>
+            <option value="liseo">Liseo (Procloraz) — FRAC 3</option>
+            <option value="amistar">Amistar (Azoxistrobina) — FRAC 11</option>
+          </optgroup>
           <option value="otro">Otro producto (especificar)</option>
         </select>
-        <button class="btn btng" style="padding:9px 14px;font-size:.82rem;" onclick="addProd()">+</button>
+        <button class="btn btng" style="padding:9px 14px;font-size:.82rem;" onclick="tAddProd()">+</button>
       </div>
     </div>
-    <div id="prod-lista" class="plist" style="display:none"></div>
-    <div class="ecomb" id="ecomb"><strong>⚗️ Efecto esperado del caldo combinado</strong><div id="ecomb-txt"></div></div>
-    <div class="fr"><label>Ajuste dosis / notas mezcla</label>
-      <textarea id="f-dosis" placeholder="Volumen total, ajustes de dosis, observaciones sobre el caldo..."></textarea>
-    </div>
-    <div class="fr"><label>Condiciones meteorológicas (autocomplete)</label>
-      <input type="text" id="f-cond" placeholder="Se rellena automáticamente con datos actuales...">
-    </div>
+    <div id="t-lista" class="plist" style="display:none"></div>
+    <div id="t-incompat" style="display:none;margin-bottom:10px;"></div>
+    <div class="ecomb" id="t-ecomb"><strong>⚗️ Efecto esperado de la cuba combinada</strong><div id="t-ecomb-txt"></div></div>
+    <div class="fr"><label>Condiciones meteorológicas</label>
+      <input type="text" id="t-cond" placeholder="Se rellena automáticamente con datos actuales..."></div>
     <div class="fr"><label>Motivo / objetivo</label>
-      <textarea id="f-motivo" placeholder="Preventivo rutina, reactivo a incidencia, planning sem. X..."></textarea>
-    </div>
-    <button class="btn btng" onclick="saveFito()">💾 Guardar Aplicación</button>
+      <textarea id="t-motivo" placeholder="Preventivo rutina, reactivo a incidencia, planning sem. X..."></textarea></div>
+    <div class="fr"><label>Notas / observaciones</label>
+      <textarea id="t-notas" placeholder="Respuesta del césped, incidencias durante la aplicación..."></textarea></div>
+    <button class="btn btng" onclick="tSave()">💾 Guardar Aplicación</button>
   </div>
+  <div class="card">
+    <div class="ch">📋 Historial de Aplicaciones</div>
+    <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+      <select id="t-filtro-zona" onchange="tRenderHistorial()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
+        <option value="">Todas las zonas</option>
+        <option value="greenes">Greenes</option><option value="antegreenes">Antegreenes</option>
+        <option value="tees">Tees</option><option value="calles">Calles</option>
+        <option value="rough">Rough</option><option value="todo">Todo el campo</option>
+      </select>
+      <select id="t-filtro-tipo" onchange="tRenderHistorial()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
+        <option value="">Todos los tipos</option>
+        <option value="fitosanitario">Solo fitosanitarios</option>
+        <option value="abono">Solo abonos</option>
+        <option value="mixto">Mixtos (fito+abono)</option>
+      </select>
+      <select id="t-filtro-anio" onchange="tRenderHistorial()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:var(--card);">
+        <option value="">Todos los años</option>
+        <option value="2026">2026</option><option value="2025">2025</option>
+      </select>
+    </div>
+    <div id="hist-tratamientos"></div>
+  </div>
+</div>
 
+<!-- ═══════════════ ENFERMEDADES ═══════════════ -->
+
+<div class="pg" id="pg-enfermedades">
   <div class="card">
     <div class="ch">🦠 Registrar Incidencia de Enfermedad</div>
     <div class="fg">
@@ -472,8 +487,7 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
     </div>
     <div class="fg">
       <div class="fr"><label>Greenes afectados</label>
-        <input type="text" id="e-greenes" placeholder="ej: 3, 7, 12, Putting">
-      </div>
+        <input type="text" id="e-greenes" placeholder="ej: 3, 7, 12, Putting"></div>
       <div class="fr"><label>Severidad</label>
         <select id="e-sev">
           <option value="leve">Leve — manchas aisladas</option>
@@ -483,18 +497,151 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
       </div>
     </div>
     <div class="fr"><label>Condiciones en el momento</label>
-      <textarea id="e-cond" placeholder="T, HR, días con rocío, lluvia reciente, noches frías..."></textarea>
-    </div>
+      <textarea id="e-cond" placeholder="T, HR, días con rocío, lluvia reciente, noches frías..."></textarea></div>
     <div class="fr"><label>Tratamiento aplicado</label>
-      <textarea id="e-trat" placeholder="Producto, dosis, resultado observado..."></textarea>
-    </div>
+      <textarea id="e-trat" placeholder="Producto, dosis, resultado observado..."></textarea></div>
     <button class="btn btng" onclick="saveEnf()">💾 Guardar Incidencia</button>
   </div>
-
-  <div class="st">Historial de Aplicaciones</div>
-  <div id="hist-fito"></div>
-  <div class="st" style="margin-top:18px">Historial de Enfermedades</div>
+  <div class="st">Historial de Enfermedades</div>
   <div id="hist-enf"></div>
+</div>
+
+<!-- ═══════════════ PERSONAL ═══════════════ -->
+
+<div class="pg" id="pg-personal">
+
+  <!-- SELECTOR EMPLEADO + RESUMEN -->
+
+  <div class="card">
+    <div class="ch">👷 Control de Horas — Personal</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center;">
+      <select id="per-emp" onchange="perCambiaEmpleado()" style="padding:9px 13px;border:1.5px solid var(--bd);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.9rem;background:var(--bg);font-weight:600;">
+        <option value="Omar">Omar</option>
+        <option value="Victor">Victor</option>
+        <option value="Iker">Iker</option>
+        <option value="Francisco">Francisco</option>
+        <option value="Rene">Rene</option>
+      </select>
+      <button onclick="perRangoHoy()" style="padding:8px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.75rem;background:var(--bg);cursor:pointer;">Hoy</button>
+      <button onclick="perRangoMes()" style="padding:8px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.75rem;background:var(--bg);cursor:pointer;">Este mes</button>
+      <button onclick="perRangoAnio()" style="padding:8px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.75rem;background:var(--bg);cursor:pointer;">Este año</button>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;">
+      <div style="font-size:.72rem;color:var(--tx2);font-weight:600;">Rango:</div>
+      <input type="date" id="per-rango-ini" onchange="perCalculaRango()" style="padding:7px 10px;border:1.5px solid var(--bd);border-radius:9px;font-size:.82rem;background:var(--bg);">
+      <div style="font-size:.72rem;color:var(--tx2);">→</div>
+      <input type="date" id="per-rango-fin" onchange="perCalculaRango()" style="padding:7px 10px;border:1.5px solid var(--bd);border-radius:9px;font-size:.82rem;background:var(--bg);">
+    </div>
+
+```
+<!-- CONTADORES -->
+<div class="cg" style="grid-template-columns:repeat(2,1fr);" id="per-contadores">
+  <div class="cb"><div class="v" id="per-horas-año">0.0</div><div class="l" id="per-lbl-rango">Horas período</div></div>
+  <div class="cb"><div class="v" id="per-horas-mes">0.0</div><div class="l">Horas mes visible</div></div>
+  <div class="cb co"><div class="v" id="per-festivos-trab">0</div><div class="l">Festivos trabajados</div></div>
+  <div class="cb cr"><div class="v" id="per-bajas">0</div><div class="l">Bajas / ausencias</div></div>
+</div>
+```
+
+  </div>
+
+  <!-- FESTIVOS DEL EMPLEADO -->
+
+  <div class="card">
+    <div class="ch">📅 Festivos de <span id="per-nombre-local">—</span></div>
+
+```
+<!-- Contadores festivos -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;">
+  <div class="mb"><div class="mb-v" id="per-cnt-rioja">12</div><div class="mb-l">La Rioja 2026</div></div>
+  <div class="mb"><div class="mb-v" id="per-cnt-locales">0/2</div><div class="mb-l">Locales</div></div>
+  <div class="mb"><div class="mb-v" id="per-cnt-vac">0/23</div><div class="mb-l">Vacaciones</div></div>
+</div>
+
+<!-- Festivos locales -->
+<div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--tx2);margin-bottom:6px;">Festivos locales (máx. 2)</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+  <input type="date" id="per-fl-fecha" style="padding:8px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.82rem;background:var(--bg);">
+  <input type="text" id="per-fl-nombre" placeholder="Nombre del festivo local" style="flex:1;min-width:140px;padding:8px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.82rem;background:var(--bg);">
+  <button class="btn btng" style="padding:8px 14px;font-size:.8rem;" onclick="perAddFestivoLocal()">+ Añadir</button>
+</div>
+<div id="per-festivos-locales-lista" style="margin-bottom:14px;"></div>
+
+<!-- Vacaciones -->
+<div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--tx2);margin-bottom:6px;">Vacaciones anuales (23 días)</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;align-items:flex-end;">
+  <div>
+    <div style="font-size:.65rem;color:var(--tx2);margin-bottom:3px;">Inicio</div>
+    <input type="date" id="per-vac-inicio" style="padding:8px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.82rem;background:var(--bg);">
+  </div>
+  <div>
+    <div style="font-size:.65rem;color:var(--tx2);margin-bottom:3px;">Fin</div>
+    <input type="date" id="per-vac-fin" style="padding:8px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.82rem;background:var(--bg);">
+  </div>
+  <button class="btn btng" style="padding:8px 14px;font-size:.8rem;" onclick="perAddVacaciones()">+ Añadir bloque</button>
+</div>
+<div id="per-vacaciones-lista"></div>
+```
+
+  </div>
+
+  <!-- CALENDARIO MENSUAL -->
+
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <button onclick="perMesAnterior()" style="background:var(--g1);color:#fff;border:none;border-radius:8px;padding:7px 14px;cursor:pointer;font-size:1rem;">‹</button>
+      <div class="ch" style="margin:0;" id="per-mes-titulo">—</div>
+      <button onclick="perMesSiguiente()" style="background:var(--g1);color:#fff;border:none;border-radius:8px;padding:7px 14px;cursor:pointer;font-size:1rem;">›</button>
+    </div>
+
+```
+<!-- Leyenda -->
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;font-size:.65rem;">
+  <span style="background:#e6f5dc;border:1px solid var(--g4);border-radius:5px;padding:2px 7px;">✅ Normal</span>
+  <span style="background:#ddeeff;border:1px solid var(--a);border-radius:5px;padding:2px 7px;">⭐ Festivo</span>
+  <span style="background:#ede0f5;border:1px solid #9b59b6;border-radius:5px;padding:2px 7px;">🏖 Vacaciones</span>
+  <span style="background:#fef0dc;border:1px solid var(--o);border-radius:5px;padding:2px 7px;">🟠 Finde/trabaja</span>
+  <span style="background:#fde8e8;border:1px solid var(--r);border-radius:5px;padding:2px 7px;">🔴 Baja/ausencia</span>
+  <span style="background:#f2f2f2;border:1px solid #ccc;border-radius:5px;padding:2px 7px;">⬜ No trabaja</span>
+</div>
+
+<div id="per-calendario" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;"></div>
+```
+
+  </div>
+
+  <!-- RESUMEN MENSUAL -->
+
+  <div class="card">
+    <div class="ch">📊 Resumen del mes</div>
+    <div id="per-resumen-mes" style="font-size:.82rem;color:var(--tx2);"></div>
+  </div>
+
+  <!-- VISTA GLOBAL TODOS LOS EMPLEADOS -->
+
+  <div class="card" style="margin-top:6px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+      <button onclick="perGlobalAnterior()" style="background:var(--g1);color:#fff;border:none;border-radius:8px;padding:7px 14px;cursor:pointer;font-size:1rem;">‹</button>
+      <div class="ch" style="margin:0;" id="per-global-titulo">—</div>
+      <button onclick="perGlobalSiguiente()" style="background:var(--g1);color:#fff;border:none;border-radius:8px;padding:7px 14px;cursor:pointer;font-size:1rem;">›</button>
+    </div>
+
+```
+<!-- Leyenda compacta -->
+<div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;font-size:.6rem;">
+  <span style="background:#e6f5dc;border:1px solid var(--g4);border-radius:4px;padding:1px 6px;">✅ Trabaja</span>
+  <span style="background:#ddeeff;border:1px solid var(--a);border-radius:4px;padding:1px 6px;">⭐ Festivo</span>
+  <span style="background:#ede0f5;border:1px solid #9b59b6;border-radius:4px;padding:1px 6px;">🏖 Vacaciones</span>
+  <span style="background:#fef0dc;border:1px solid var(--o);border-radius:4px;padding:1px 6px;">🟠 Finde/trabaja</span>
+  <span style="background:#fde8e8;border:1px solid var(--r);border-radius:4px;padding:1px 6px;">🔴 Baja</span>
+  <span style="background:#f2f2f2;border:1px solid #ccc;border-radius:4px;padding:1px 6px;">⬜ Libre</span>
+</div>
+
+<div id="per-global-grid" style="overflow-x:auto;"></div>
+```
+
+  </div>
+
 </div>
 
 <!-- ═══════════════ RIEGO ═══════════════ -->
@@ -580,113 +727,6 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
   <div class="st" style="margin-top:14px">Historial Secas</div><div id="hist-secas"></div>
 </div>
 
-<!-- ═══════════════ ABONADO ═══════════════ -->
-
-<div class="pg" id="pg-abonado">
-
-  <div class="card">
-    <div class="ch">🌾 Registrar Aplicación de Abono</div>
-    <div class="fg">
-      <div class="fr"><label>Fecha</label><input type="date" id="ab-fecha"></div>
-      <div class="fr">
-        <label>Superficie tratada</label>
-        <select id="ab-zona" onchange="renderAbZonas()">
-          <option value="greenes">Greenes (Agrostis stolonifera)</option>
-          <option value="antegreenes">Antegreenes (Lolium perenne)</option>
-          <option value="tees">Tees (Lolium perenne)</option>
-          <option value="calles">Calles (Lolium perenne)</option>
-          <option value="rough">Rough</option>
-          <option value="todo">Todo el campo</option>
-        </select>
-      </div>
-    </div>
-
-```
-<div class="fr">
-  <label>Producto / Abono</label>
-  <div style="display:flex;gap:7px;">
-    <select id="ab-prod" style="flex:1;padding:9px 11px;border:1.5px solid var(--bd);border-radius:9px;font-size:.84rem;background:var(--bg);" onchange="autoAbono()">
-      <option value="">— Seleccionar —</option>
-      <optgroup label="🌿 Abonos minerales microgranulados">
-        <option value="org16-4-8">Organomineral 16-4-8 · 100 kg/Ha greenes</option>
-        <option value="org11-0-0">Organomineral 11-0-0 · 100 kg/Ha greenes</option>
-        <option value="solucion_npk">Solución NPK (fertirrigación)</option>
-      </optgroup>
-      <optgroup label="💊 Abonos solubles foliares">
-        <option value="sulfato_amo">Sulfato Amónico 21-0-0 · 10 kg/Ha</option>
-        <option value="fosfato_mono">Fosfato Monoamónico · 4 kg/Ha</option>
-        <option value="nitrato_pot">Nitrato Potásico 13-0-46 · 10 kg/Ha</option>
-        <option value="sulfato_fe">Sulfato de Fe Soluble · 4 kg/Ha</option>
-        <option value="sulfato_mg">Sulfato de Mg Soluble · 2 kg/Ha</option>
-        <option value="mix_soluble">Mezcla solubles (especificar)</option>
-      </optgroup>
-      <optgroup label="🌱 Bioestimulantes con función nutricional">
-        <option value="equiort_nut">Equiort (Fe, Ca, Si) · 20 L/Ha</option>
-        <option value="algae_nut">Algae Green 500 (Citoquininas) · según dosis</option>
-      </optgroup>
-      <option value="otro_ab">Otro abono (especificar)</option>
-    </select>
-    <button class="btn btng" style="padding:9px 14px;font-size:.82rem;" onclick="addAbono()">+</button>
-  </div>
-</div>
-
-<div id="ab-lista" class="plist" style="display:none"></div>
-
-<div class="fg">
-  <div class="fr">
-    <label>Superficie (Ha)</label>
-    <input type="number" id="ab-sup" placeholder="ej: 1.0" step="0.1" min="0">
-  </div>
-  <div class="fr">
-    <label>Método aplicación</label>
-    <select id="ab-metodo">
-      <option>Granulado — esparcidora</option>
-      <option>Foliar — pulverizador</option>
-      <option>Fertirrigación</option>
-      <option>Drench</option>
-    </select>
-  </div>
-</div>
-
-<div class="fr">
-  <label>Condiciones del suelo / momento</label>
-  <input type="text" id="ab-cond" placeholder="T suelo, humedad, días desde último abonado...">
-</div>
-<div class="fr">
-  <label>Objetivo del abonado</label>
-  <textarea id="ab-objetivo" placeholder="Ej: recuperación tras aireado, arranque primaveral, corrección de clorosis, mantenimiento estival..."></textarea>
-</div>
-<div class="fr">
-  <label>Notas / observaciones</label>
-  <textarea id="ab-notas" placeholder="Respuesta del césped, incidencias durante aplicación..."></textarea>
-</div>
-<button class="btn btng" onclick="saveAbonado()">💾 Guardar Aplicación</button>
-```
-
-  </div>
-
-  <!-- RESUMEN ANUAL -->
-
-  <div class="card">
-    <div class="ch">📊 Resumen de Abonado</div>
-    <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
-      <select id="ab-filtro-zona" onchange="renderAbonado()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:#243d14;color:var(--tx);">
-        <option value="">Todas las zonas</option>
-        <option value="greenes">Greenes</option>
-        <option value="antegreenes">Antegreenes</option>
-        <option value="tees">Tees</option>
-        <option value="calles">Calles</option>
-        <option value="rough">Rough</option>
-      </select>
-      <select id="ab-filtro-anio" onchange="renderAbonado()" style="padding:7px 11px;border:1.5px solid var(--bd);border-radius:8px;font-size:.79rem;background:#243d14;color:var(--tx);">
-        <option value="">Todos los años</option>
-        <option value="2026">2026</option><option value="2025">2025</option>
-      </select>
-    </div>
-    <div id="hist-abonado"></div>
-  </div>
-</div>
-
 <script>
 // ══════════════════════════════════════════════════════════
 //  CONSTANTES
@@ -694,6 +734,58 @@ input, select, textarea {font-size:max(16px, 1em) !important;}
 const LAT = 42.3594, LON = -2.5498; // Golf Sojuela
 const DIAS = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
 const MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+
+// ══════════════════════════════════════════════════════════
+//  MATRIZ DE INCOMPATIBILIDADES — SOJUELA 2026
+//  Claves = las de PDB. niv: INCOMPATIBLE | PRECAUCIÓN | ROTACIÓN FRAC
+// ══════════════════════════════════════════════════════════
+const INCOMPAT = [
+  // --- COBRE ---
+  {a:'cobre',b:'bicarbonato',    niv:'⚠️ PRECAUCIÓN',    txt:'Cu²⁺ en pH alcalino (bicarbonato) puede precipitar. Aplicar separados >24 h.'},
+  {a:'cobre',b:'quitosano',      niv:'⚠️ PRECAUCIÓN',    txt:'El cobre puede interferir con los polisacáridos del quitosano. Aplicar en días distintos.'},
+  {a:'cobre',b:'thpromotor',     niv:'🚫 INCOMPATIBLE',  txt:'El cobre es tóxico para Trichoderma harzianum. Nunca mezclar. Respetar ≥5-7 días de intervalo.'},
+  {a:'cobre',b:'renov6',         niv:'🚫 INCOMPATIBLE',  txt:'El cobre es bactericida. Destruiría las bacterias PGPR del Renov 6. Nunca mezclar ni aplicar el mismo día.'},
+  {a:'cobre',b:'ascernity',      niv:'⚠️ PRECAUCIÓN',    txt:'Etiqueta del Cobre: no mezclar con otros fitosanitarios. Aplicar en días distintos.'},
+  {a:'cobre',b:'mystic',         niv:'🚫 INCOMPATIBLE',  txt:'Etiqueta del Cobre: no mezclar con otros fitosanitarios. Riesgo de reacción química en el caldo.'},
+  {a:'cobre',b:'brek',           niv:'🚫 INCOMPATIBLE',  txt:'Etiqueta del Cobre: no mezclar con otros fitosanitarios. Riesgo de reacción química en el caldo.'},
+  {a:'cobre',b:'liseo',          niv:'🚫 INCOMPATIBLE',  txt:'Etiqueta del Cobre: no mezclar con otros fitosanitarios. Riesgo de reacción química en el caldo.'},
+  {a:'cobre',b:'amistar',        niv:'🚫 INCOMPATIBLE',  txt:'Etiqueta del Cobre: no mezclar con otros fitosanitarios. Riesgo de reacción química en el caldo.'},
+  // --- BICARBONATO ---
+  {a:'bicarbonato',b:'agrokim',  niv:'🚫 INCOMPATIBLE',  txt:'ClO₂ (ácido oxidante) + bicarbonato (base): reacción violenta. Nunca mezclar en el mismo caldo.'},
+  {a:'bicarbonato',b:'liseo',    niv:'⚠️ PRECAUCIÓN',    txt:'Procloraz (EC ácida con xileno) puede reaccionar con el bicarbonato. No mezclar.'},
+  // --- AGROKIM ---
+  {a:'agrokim',b:'thpromotor',     niv:'🚫 INCOMPATIBLE', txt:'ClO₂ destruye microorganismos — mataría el Trichoderma. Usar AGROKIM solo para desinfectar el agua ANTES de añadir biológicos.'},
+  {a:'agrokim',b:'renov6',         niv:'🚫 INCOMPATIBLE', txt:'ClO₂ es bactericida de amplio espectro. Destruiría las bacterias PGPR. Nunca en el mismo caldo.'},
+  {a:'agrokim',b:'quitosano',      niv:'⚠️ PRECAUCIÓN',   txt:'ClO₂ puede oxidar y degradar los polisacáridos del quitosano. Aplicar por separado.'},
+  {a:'agrokim',b:'algae',          niv:'⚠️ PRECAUCIÓN',   txt:'ClO₂ puede oxidar los compuestos orgánicos del extracto de algas. Aplicar por separado.'},
+  {a:'agrokim',b:'equigan_salvia', niv:'⚠️ PRECAUCIÓN',   txt:'ClO₂ oxida polifenoles. Añadir AGROKIM al agua primero y esperar antes de incorporar extractos vegetales.'},
+  {a:'agrokim',b:'equigan_olivo',  niv:'⚠️ PRECAUCIÓN',   txt:'ClO₂ oxida polifenoles (oleuropeína). No mezclar en el mismo caldo.'},
+  {a:'agrokim',b:'equitres',       niv:'⚠️ PRECAUCIÓN',   txt:'ClO₂ puede degradar los ácidos orgánicos de la cola de caballo. Aplicar por separado.'},
+  {a:'agrokim',b:'equiort',        niv:'⚠️ PRECAUCIÓN',   txt:'ClO₂ puede oxidar los compuestos fenólicos de la ortiga. No mezclar en el mismo caldo.'},
+  // --- TRICHODERMA ---
+  {a:'thpromotor',b:'ascernity',    niv:'🚫 INCOMPATIBLE', txt:'Ascernity (fungicida Gr.3+7) destruiría el Trichoderma en caldo y suelo. Respetar ≥14-21 días de intervalo.'},
+  {a:'thpromotor',b:'mystic',       niv:'🚫 INCOMPATIBLE', txt:'Triazoles (DMI) son tóxicos para hongos beneficiosos. Tebuconazol destruiría el Trichoderma. No aplicar en 14-21 días.'},
+  {a:'thpromotor',b:'brek',         niv:'🚫 INCOMPATIBLE', txt:'Triazoles (DMI) tóxicos para Trichoderma. No aplicar Brek en los 14-21 días siguientes a TH Promotor.'},
+  {a:'thpromotor',b:'liseo',        niv:'🚫 INCOMPATIBLE', txt:'Procloraz (imidazol DMI) es fungicida sistémico. Destruiría el Trichoderma en suelo y caldo.'},
+  {a:'thpromotor',b:'amistar',      niv:'🚫 INCOMPATIBLE', txt:'Estrobilurina (QoI) inhibe respiración mitocondrial fúngica. Destruiría el Trichoderma. No mezclar.'},
+  {a:'thpromotor',b:'carfentrazol', niv:'⚠️ PRECAUCIÓN',   txt:'Carfentrazol (inhibidor PPO) puede afectar organismos del suelo. Aplicar Trichoderma ≥5 días después.'},
+  // --- BACTERIAS ---
+  {a:'renov6',b:'ascernity',    niv:'⚠️ PRECAUCIÓN', txt:'Ascernity como drench puede afectar microbiota. Aplicar bacterias ≥5 días después del fungicida.'},
+  {a:'renov6',b:'mystic',       niv:'⚠️ PRECAUCIÓN', txt:'Triazoles pueden afectar bacterias en suelo. Separar la aplicación ≥5 días.'},
+  {a:'renov6',b:'carfentrazol', niv:'⚠️ PRECAUCIÓN', txt:'Carfentrazol puede afectar microbiota del suelo. Aplicar bacterias ≥5 días después.'},
+  // --- ROTACIONES FRAC (mismo grupo = misma diana bioquímica) ---
+  {a:'mystic',  b:'brek',       niv:'🔄 ROTACIÓN FRAC', txt:'Ambos son FRAC Gr.3 (DMI/triazol). Misma diana bioquímica: riesgo de resistencias cruzadas. No usar en aplicaciones consecutivas.'},
+  {a:'mystic',  b:'liseo',      niv:'🔄 ROTACIÓN FRAC', txt:'Ambos son FRAC Gr.3 (DMI). No rotar entre sí: resistencias cruzadas garantizadas.'},
+  {a:'mystic',  b:'ascernity',  niv:'🔄 ROTACIÓN FRAC', txt:'Ascernity lleva Difenoconazol (Gr.3). Mystic (Tebuconazol) también es Gr.3. No combinar: misma diana fúngica.'},
+  {a:'brek',    b:'liseo',      niv:'🔄 ROTACIÓN FRAC', txt:'Ambos son FRAC Gr.3 (DMI). No rotar entre sí: resistencias cruzadas garantizadas.'},
+  {a:'brek',    b:'ascernity',  niv:'🔄 ROTACIÓN FRAC', txt:'Ascernity lleva Difenoconazol (Gr.3). Brek (Tetraconazol) también es Gr.3. No combinar en rotación consecutiva.'},
+  {a:'liseo',   b:'ascernity',  niv:'🔄 ROTACIÓN FRAC', txt:'Ascernity lleva Difenoconazol (Gr.3). Liseo (Procloraz) también es Gr.3. No combinar en rotación consecutiva.'},
+  {a:'carfentrazol',b:'ascernity',niv:'⚠️ PRECAUCIÓN',  txt:'Si Ascernity se usa en drench, respetar ≥5 días antes de aplicar Carfentrazol por riesgo sobre microbiota.'},
+];
+
+function checkIncompat(k1, k2) {
+  return INCOMPAT.find(r => (r.a===k1 && r.b===k2) || (r.a===k2 && r.b===k1)) || null;
+}
 
 // ══════════════════════════════════════════════════════════
 //  BASE DE DATOS PRODUCTOS
@@ -727,7 +819,18 @@ const PDB = {
     e:'Superpenetrante para greenes de arena. Reduce tensión superficial mejorando distribución uniforme del agua. Previene Localized Dry Spot (LDS). Usar todo el año. Mejora penetración de todos los productos del caldo.'},
   carfentrazol:{n:'Carfentrazol Etil',d:'0.18 L/Ha',c:'REGULADOR',
     e:'Regulador selectivo. Elimina musgo plateado (Bryum argenteum) a dosis bajas sin dañar Agrostis. Reduce competencia de Poa annua.'},
-  otro:{n:'Otro producto',d:'—',c:'OTRO',e:'Especificar efecto manualmente.'}
+  otro:{n:'Otro producto',d:'—',c:'OTRO',e:'Especificar efecto manualmente.'},
+  // Fungicidas de síntesis (emergencia)
+  ascernity:{n:'Ascernity (Difenoconazol+Benzovindiflupir)',d:'0.5-1 L/Ha',c:'FUNGICIDA SÍNTESIS',
+    e:'⚠️ Solo emergencia. FRAC Gr.3+7. Único con registro en césped (ES-00580). Espectro máximo: Fusarium, Dollar Spot, Rhizoctonia, Brown Patch. 21-28 días persistencia.'},
+  mystic:{n:'Mystic 250 EW (Tebuconazol)',d:'0.5-1 L/Ha',c:'FUNGICIDA SÍNTESIS',
+    e:'⚠️ Solo emergencia. FRAC Gr.3 (DMI/triazol). Alta eficacia Fusarium y Dollar Spot. Posible inhibición de crecimiento en Agrostis a dosis altas. Rotar con Gr.11.'},
+  brek:{n:'Brek (Tetraconazol)',d:'0.8-1.5 L/Ha',c:'FUNGICIDA SÍNTESIS',
+    e:'⚠️ Solo emergencia. FRAC Gr.3 (DMI). Menor fitotoxicidad que Tebuconazol. Eficacia Fusarium, Dollar Spot, Rhizoctonia. Rotar con Gr.11.'},
+  liseo:{n:'Liseo (Procloraz)',d:'1.5-2 L/Ha',c:'FUNGICIDA SÍNTESIS',
+    e:'⚠️ ÚLTIMO RECURSO. FRAC Gr.3 (imidazol). Formulación EC con xileno. Muy tóxico para organismos acuáticos. Banda seguridad 5 m. No aplicar cerca de cursos de agua.'},
+  amistar:{n:'Amistar (Azoxistrobina)',d:'0.8-1 L/Ha',c:'FUNGICIDA SÍNTESIS',
+    e:'⚠️ Solo emergencia. FRAC Gr.11 (QoI/estrobilurina). NUNCA en solitario: siempre en mezcla con Gr.3 o Gr.7. Resistencias generalizadas en Dollar Spot europeo.'}
 };
 
 // ══════════════════════════════════════════════════════════
@@ -754,10 +857,9 @@ function tickReloj() {
 function goTab(id, btn) {
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
-  var pg = document.getElementById('pg-'+id);
+  var pg=document.getElementById('pg-'+id);
   if(pg) pg.classList.add('on');
   if(btn) btn.classList.add('on');
-  // Scroll al top al cambiar de pestaña
   window.scrollTo(0,0);
 }
 
@@ -794,9 +896,8 @@ async function cargarOpenMeteo() {
     console.error('Open-Meteo error:', e);
     document.getElementById('m-loading').style.display = 'none';
     document.getElementById('m-err').style.display = 'block';
-    document.getElementById('m-err').innerHTML = '⚠️ No se pudo cargar Open-Meteo.<br><small>Si usas iPhone, abre esta web desde Safari escribiendo la URL directamente, no desde el archivo descargado.</small>';
     document.getElementById('src-dot').className = 'dot dr';
-    document.getElementById('src-label').textContent = '❌ Error Open-Meteo';
+    document.getElementById('src-label').textContent = '❌ Error al conectar con Open-Meteo';
     // Fallback época del año
     const m = new Date().getMonth();
     const tms = [6,7,9,12,16,21,24,23,19,14,9,6];
@@ -816,7 +917,7 @@ function procesarOpenMeteo(om) {
   const tmax = parseFloat((d.temperature_2m_max[HOY]||tmed+4).toFixed(1));
   const tmin = parseFloat((d.temperature_2m_min[HOY]||tmed-4).toFixed(1));
   const hum  = Math.round(c.relative_humidity_2m);
-  const lluvia = parseFloat((c.precipitation||0).toFixed(1));
+  const lluvia = parseFloat((d.precipitation_sum[HOY]||0).toFixed(1));
   const viento = parseFloat((c.wind_speed_10m||0).toFixed(1));
   const rocio = parseFloat((c.dew_point_2m||tmed-5).toFixed(1));
 
@@ -846,6 +947,8 @@ function procesarOpenMeteo(om) {
     tmax: parseFloat((d.temperature_2m_max[i]||tmax).toFixed(1)),
     tmin: parseFloat((d.temperature_2m_min[i]||tmin).toFixed(1)),
     lluvia: parseFloat((d.precipitation_sum[i]||0).toFixed(1)),
+    hrMax: parseFloat((d.relative_humidity_2m_max[i]||hum).toFixed(0)),
+    hrMin: parseFloat((d.relative_humidity_2m_min[i]||Math.max(hum-20,40)).toFixed(0)),
     ico: wcIcon(d.weather_code[i]||1)
   }));
 
@@ -958,16 +1061,13 @@ function calcEnfermedades(dat) {
   const {tmed,tmax,hum,lluvia,hum5,tmed5} = dat;
   const rDS_sk = smithKerns(hum5||hum, tmed5||tmed);
   const rDS_hum = riesgoHumedadSostenida(hum5||hum, tmed5||tmed);
-  // Riesgo DS final: máximo de ambos modelos (más conservador para Agrostis europeo)
   const rDS  = Math.max(rDS_sk, rDS_hum);
   const rFus = rFusarium(tmed, tmax, hum, lluvia);
   const rPy  = rPythium(tmed, hum, lluvia);
   window._R  = {rDS, rFus, rPy};
 
-  // Alertas históricas desde registros guardados
   const hAlerts = checkHistorial();
 
-  // Alertas activas — umbral Dollar Spot bajado a 10% para Agrostis europeo
   let html = '';
   if(hAlerts.length) {
     hAlerts.forEach(a=>{html+=`<div class="al al-o">⚠️ <div><strong>Alerta histórica ${a.anio}:</strong> ${a.enf} detectado en greenes ${a.g}. Condiciones actuales similares — revisar.</div></div>`;});
@@ -980,7 +1080,6 @@ function calcEnfermedades(dat) {
   if(!html)         html=`<div class="al al-g">✅ <div><strong>Condiciones favorables.</strong> Riesgo bajo de enfermedades fúngicas según datos actuales.</div></div>`;
   document.getElementById('alertas-box').innerHTML = html;
 
-  // Detalle modelos
   const mods = [
     {n:'Dollar Spot',s:`Smith-Kerns + HR sostenida · HR5d: ${Math.round(hum5||hum)}% · T5d: ${(tmed5||tmed).toFixed(1)}°C · Acción ≥10% (Agrostis europeo)`,r:rDS},
     {n:'Fusarium',  s:`Microdochium nivale · Tmax: ${tmax.toFixed(1)}°C · HR: ${Math.round(hum)}% · Lluvia: ${lluvia}mm`,r:rFus},
@@ -994,6 +1093,77 @@ function calcEnfermedades(dat) {
       <div class="rebar"><div class="refill ${cl}" style="width:${m.r}%"></div></div>
       </div><div class="repct" style="color:${co}">${m.r}%</div></div>`;
   }).join('');
+
+  // Previsión de riesgo si hay datos de prev
+  if(dat.prev) renderPrevRiesgo(dat.prev);
+}
+
+// ══════════════════════════════════════════════════════════
+//  PREVISIÓN DE RIESGO — PRÓXIMOS 7 DÍAS
+// ══════════════════════════════════════════════════════════
+function renderPrevRiesgo(prev) {
+  const el = document.getElementById('prev-riesgo-box');
+  if(!el) return;
+
+  const hoy = new Date();
+
+  // Para cada día futuro, calculamos los 3 modelos usando datos del día
+  // HR media = (hrMax + hrMin) / 2, Tmed = (Tmax + Tmin) / 2
+  const dias = prev.slice(0,7).map((p, i) => {
+    const d = new Date(hoy); d.setDate(d.getDate() + i + 1);
+    const tmed = parseFloat(((p.tmax + p.tmin) / 2).toFixed(1));
+    const hrMedia = parseFloat(((p.hrMax + p.hrMin) / 2).toFixed(0));
+
+    // Para Smith-Kerns necesitamos HR5d y T5d — usamos los datos del día como aproximación
+    const rDS = Math.max(
+      smithKerns(hrMedia, tmed),
+      riesgoHumedadSostenida(hrMedia, tmed)
+    );
+    const rFus = rFusarium(tmed, p.tmax, hrMedia, p.lluvia);
+    const rPy  = rPythium(tmed, hrMedia, p.lluvia);
+    const rMax = Math.max(rDS, rFus, rPy);
+
+    // Enfermedad dominante
+    let enf = 'DS';
+    if(rFus >= rDS && rFus >= rPy) enf = 'Fus';
+    else if(rPy >= rDS && rPy >= rFus) enf = 'Pyt';
+
+    return { d, tmed, tmax:p.tmax, tmin:p.tmin, lluvia:p.lluvia, hrMedia, rDS, rFus, rPy, rMax, enf, ico:p.ico };
+  });
+
+  const colRiesgo = r => r>=60?'var(--r)':r>=35?'var(--o)':r>=15?'#f0c040':'var(--g3)';
+  const lblRiesgo = r => r>=60?'ALTO':r>=35?'MEDIO':r>=15?'LEVE':'BAJO';
+
+  // Alerta anticipada si algún día tiene riesgo alto
+  const diasAlto = dias.filter(d => d.rMax >= 60);
+  const diasMedio = dias.filter(d => d.rMax >= 35 && d.rMax < 60);
+  let alertaHtml = '';
+  if(diasAlto.length) {
+    const nombres = diasAlto.map(d => DIAS[d.d.getDay()]).join(', ');
+    alertaHtml = `<div class="al al-r" style="margin-bottom:8px;">🔴 <div><strong>Riesgo ALTO previsto:</strong> ${nombres}. Planificar tratamiento preventivo antes de esos días.</div></div>`;
+  } else if(diasMedio.length) {
+    const nombres = diasMedio.map(d => DIAS[d.d.getDay()]).join(', ');
+    alertaHtml = `<div class="al al-o" style="margin-bottom:8px;">🟡 <div><strong>Riesgo MODERADO previsto:</strong> ${nombres}. Mantener vigilancia.</div></div>`;
+  }
+
+  // Grid de días
+  const gridHtml = `<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:6px;">` +
+    dias.map(dia => {
+      const color = colRiesgo(dia.rMax);
+      const lbl = lblRiesgo(dia.rMax);
+      return `<div style="border:1.5px solid ${color};border-radius:9px;padding:6px 3px;text-align:center;background:${dia.rMax>=60?'#fde8e8':dia.rMax>=35?'#fff3cd':dia.rMax>=15?'#fffbe6':'#f0faf0'};">
+        <div style="font-size:.6rem;font-weight:700;color:var(--tx2);">${DIAS[dia.d.getDay()]}</div>
+        <div style="font-size:.75rem;">${dia.ico}</div>
+        <div style="font-size:.58rem;color:var(--tx2);">${dia.tmax}°/${dia.tmin}°</div>
+        ${dia.lluvia>0?`<div style="font-size:.55rem;color:var(--a);">☔${dia.lluvia}mm</div>`:'<div style="font-size:.55rem;color:transparent;">·</div>'}
+        <div style="margin:3px 0 2px;height:4px;border-radius:3px;background:${color};"></div>
+        <div style="font-size:.56rem;font-weight:700;color:${color};">${lbl}</div>
+        <div style="font-size:.5rem;color:var(--tx2);">DS:${dia.rDS}%</div>
+        <div style="font-size:.5rem;color:var(--tx2);">Fus:${dia.rFus}%</div>
+      </div>`;
+    }).join('') + '</div>';
+
+  el.innerHTML = alertaHtml + gridHtml;
 }
 
 function checkHistorial() {
@@ -1056,85 +1226,15 @@ function calcRiego(dat) {
 }
 
 // ══════════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════
 //  AUTOCOMPLETE CONDICIONES
 // ══════════════════════════════════════════════════════════
 function autoFill(d) {
   const txt = `T: ${d.tmed.toFixed(1)}°C · HR: ${Math.round(d.hum)}% · Rocío: ${d.rocio?.toFixed(1)||'--'}°C · Viento: ${(d.viento||0).toFixed(0)} km/h · Lluvia: ${d.lluvia||0} mm`;
-  const fc = document.getElementById('f-cond'); if(fc&&!fc.value) fc.value=txt;
+  const tc = document.getElementById('t-cond'); if(tc&&!tc.value) tc.value=txt;
   const ec = document.getElementById('e-cond'); if(ec&&!ec.value) ec.value=txt;
 }
-
-// ══════════════════════════════════════════════════════════
-//  MULTI-PRODUCTO
-// ══════════════════════════════════════════════════════════
-let caldo = [];
-
-function addProd() {
-  const k = document.getElementById('f-psel').value;
-  if(!k) return;
-  if(caldo.find(p=>p.k===k)) { alert('Este producto ya está en el caldo'); return; }
-  const p = PDB[k];
-  // Si es "otro", pedir nombre
-  let nombre = p.n;
-  if(k==='otro') {
-    nombre = prompt('Nombre del producto:','');
-    if(!nombre) return;
-  }
-  // Dosis: mostrar la del planning pero permitir editar
-  const dosisDefault = k==='otro' ? '' : p.d;
-  const dosis = prompt(`Dosis para ${nombre}\n(Planning Sojuela: ${dosisDefault})\nEdita si aplicas dosis diferente:`, dosisDefault);
-  if(dosis===null) return; // canceló
-  caldo.push({k, n:nombre, d:dosis||dosisDefault, dRef:dosisDefault, c:p.c, e:p.e});
-  document.getElementById('f-psel').value='';
-  renderCaldo();
-}
-
-function remProd(k) { caldo=caldo.filter(p=>p.k!==k); renderCaldo(); }
-
-function renderCaldo() {
-  const lista = document.getElementById('prod-lista');
-  const ecBox = document.getElementById('ecomb');
-  if(!caldo.length) { lista.style.display='none'; ecBox.style.display='none'; return; }
-  lista.style.display='block';
-  lista.innerHTML = caldo.map(p=>{
-    const difDosis = p.dRef && p.d !== p.dRef;
-    return`<div class="pitem">
-      <div>
-        <div class="pn">${p.n}</div>
-        <div class="pd">
-          <span class="bx bg">${p.c}</span>
-          <strong>${p.d}</strong>
-          ${difDosis?`<span style="color:var(--o);font-size:.62rem;margin-left:4px">(planning: ${p.dRef})</span>`:''}
-        </div>
-      </div>
-      <button class="btns btndel" onclick="remProd('${p.k}')">✕</button>
-    </div>`;
-  }).join('');
-
-  ecBox.style.display='block';
-  let ef = caldo.map(p=>`<strong>${p.n}:</strong> ${p.e}`).join('<br><br>');
-
-  // Sinergias
-  const hasBic=caldo.some(p=>p.k==='bicarbonato');
-  const hasQui=caldo.some(p=>p.k==='quitosano');
-  const hasCob=caldo.some(p=>p.k==='cobre');
-  const hasPen=caldo.some(p=>p.k==='fsy_isp');
-  const hasEqT=caldo.some(p=>p.k==='equitres');
-  const hasEqO=caldo.some(p=>p.k==='equiort');
-  const hasEqS=caldo.some(p=>p.k==='equigan_salvia');
-  const hasBio=caldo.some(p=>p.c==='BIOESTIMULANTE');
-
-  if(caldo.length>1) {
-    ef += '<br><br><strong>🔗 Sinergia del caldo combinado:</strong><br>';
-    if(hasBic&&hasQui)    ef+='· Bicarbonato + Quitosano = protección de contacto inmediata + resistencia sistémica acumulativa. Combinación óptima frente a Dollar Spot y Fusarium.<br>';
-    if(hasCob&&hasBio)    ef+='· Cobre + bioestimulante = barrera externa + refuerzo defensas internas del Agrostis. Máxima eficacia preventiva.<br>';
-    if(hasPen)            ef+='· FSY ISP mejora penetración y distribución de todos los productos activos del caldo. Eficacia global aumentada.<br>';
-    if(hasEqT&&hasEqO&&hasEqS) ef+='· Trío Equigan (Cola de Caballo + Ortiga + Salvia) = escudo antioxidante completo + refuerzo estructural de paredes celulares.<br>';
-  }
-  document.getElementById('ecomb-txt').innerHTML = ef;
-}
-
-// ══════════════════════════════════════════════════════════
 //  MAQUINARIA
 // ══════════════════════════════════════════════════════════
 function saveMaq() {
@@ -1187,81 +1287,6 @@ function calcCostes() {
   document.getElementById('c-rep').textContent=este.filter(d=>d.tipo==='reparacion').reduce((s,d)=>s+(d.coste||0),0).toFixed(0)+' €';
   document.getElementById('c-mant').textContent=este.filter(d=>d.tipo!=='reparacion').reduce((s,d)=>s+(d.coste||0),0).toFixed(0)+' €';
   document.getElementById('c-n').textContent=todos.length;
-}
-
-// ══════════════════════════════════════════════════════════
-//  FITOSANITARIOS
-// ══════════════════════════════════════════════════════════
-function saveFito() {
-  if(!caldo.length) return alert('Añade al menos un producto al caldo');
-  const fecha=document.getElementById('f-fecha').value; if(!fecha) return alert('Fecha obligatoria');
-  const datos=get('fitosanitarios');
-  datos.unshift({id:Date.now(), productos:[...caldo], fecha,
-    zona:document.getElementById('f-zona').value,
-    dosis:document.getElementById('f-dosis').value,
-    condiciones:document.getElementById('f-cond').value,
-    motivo:document.getElementById('f-motivo').value,
-    efecto:document.getElementById('ecomb-txt').innerHTML
-  });
-  set('fitosanitarios',datos);
-  caldo=[]; renderCaldo();
-  ['f-dosis','f-motivo'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('f-fecha').value=hoy();
-  renderFito();
-}
-
-function delFito(id) { if(!confirm('¿Eliminar?'))return; set('fitosanitarios',get('fitosanitarios').filter(d=>d.id!==id)); renderFito(); }
-
-function renderFito() {
-  const datos=get('fitosanitarios');
-  const el=document.getElementById('hist-fito');
-  if(!datos.length){el.innerHTML='<div style="color:var(--tx2);font-size:.79rem;padding:10px 0">Sin aplicaciones registradas.</div>';return;}
-  el.innerHTML=datos.map(d=>`<div class="hi"><div class="hi-top"><div>
-    <div class="hi-t">${d.productos?.map(p=>p.n).join(' + ')||'Aplicación'}</div>
-    <div class="hi-m"><span class="bx bb">${d.zona}</span> ${d.productos?.map(p=>p.d).join(' · ')}</div>
-    ${d.condiciones?`<div class="hi-m">🌡 ${d.condiciones}</div>`:''}
-    ${d.motivo?`<div class="hi-m">📋 ${d.motivo}</div>`:''}
-    </div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
-    <span class="hi-f">${fmtF(d.fecha)}</span>
-    <button class="btns btndel" onclick="delFito(${d.id})">✕</button>
-    </div></div></div>`).join('');
-}
-
-// ══════════════════════════════════════════════════════════
-//  ENFERMEDADES
-// ══════════════════════════════════════════════════════════
-function saveEnf() {
-  const fecha=document.getElementById('e-fecha').value; if(!fecha) return alert('Fecha obligatoria');
-  const datos=get('enfermedades');
-  datos.unshift({id:Date.now(),
-    tipo:document.getElementById('e-tipo').value, fecha,
-    greenes:document.getElementById('e-greenes').value,
-    severidad:document.getElementById('e-sev').value,
-    condiciones:document.getElementById('e-cond').value,
-    tratamiento:document.getElementById('e-trat').value
-  });
-  set('enfermedades',datos);
-  ['e-greenes','e-cond','e-trat'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('e-fecha').value=hoy();
-  renderEnf();
-}
-
-function delEnf(id) { if(!confirm('¿Eliminar?'))return; set('enfermedades',get('enfermedades').filter(d=>d.id!==id)); renderEnf(); }
-
-function renderEnf() {
-  const datos=get('enfermedades');
-  const el=document.getElementById('hist-enf');
-  if(!datos.length){el.innerHTML='<div style="color:var(--tx2);font-size:.79rem;padding:10px 0">Sin incidencias de enfermedad.</div>';return;}
-  const sc={leve:'bg',moderada:'bo',grave:'br'};
-  el.innerHTML=datos.map(d=>`<div class="hi"><div class="hi-top"><div>
-    <div class="hi-t">🦠 ${d.tipo} <span class="bx ${sc[d.severidad]||'bb'}">${d.severidad}</span></div>
-    ${d.greenes?`<div class="hi-m">⛳ Greenes: ${d.greenes}</div>`:''}
-    ${d.condiciones?`<div class="hi-m">🌡 ${d.condiciones}</div>`:''}
-    ${d.tratamiento?`<div class="hi-m" style="color:var(--g2)">💊 ${d.tratamiento}</div>`:''}
-    </div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
-    <span class="hi-f">${fmtF(d.fecha)}</span>
-    <button class="btns btndel" onclick="delEnf(${d.id})">✕</button>
-    </div></div></div>`).join('');
 }
 
 // ══════════════════════════════════════════════════════════
@@ -1401,172 +1426,914 @@ function renderSecas() {
 }
 
 // ══════════════════════════════════════════════════════════
-//  INICIALIZACIÓN
+
+function init() {
+  tickReloj(); setInterval(tickReloj, 60000);
+  document.querySelectorAll('.tab[data-tab]').forEach(function(btn){
+    btn.addEventListener('touchend',function(e){e.preventDefault();goTab(this.dataset.tab,this);});
+    btn.addEventListener('click',function(e){goTab(this.dataset.tab,this);});
+  });
+  ['m-fecha','t-fecha','e-fecha','s-fecha','tdr-fecha'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.value=hoy();
+  });
+  renderMaq(); calcCostes();
+  tRenderHistorial(); renderEnf();
+  initGreenes(); renderSecas(); renderTDR();
+  initPersonal();
+  cargarOpenMeteo();
+}
+
+// ══════════════════════════════════════════════════════════
+//  MÓDULO TRATAMIENTOS — CUBA UNIFICADA
 // ══════════════════════════════════════════════════════════
 
 // ══════════════════════════════════════════════════════════
-//  ABONADO
-// ══════════════════════════════════════════════════════════
-const ABONOS = {
-  'org16-4-8': {n:'Organomineral 16-4-8',d:'100 kg/Ha',c:'MINERAL',e:'Abono de liberación lenta. Aporta N (16%), P (4%), K (8%). Base nutricional greenes primavera-verano.'},
-  'org11-0-0': {n:'Organomineral 11-0-0',d:'100 kg/Ha',c:'MINERAL',e:'Abono nitrogenado de liberación lenta. Solo N (11%). Para fases de crecimiento sin necesidad de P y K.'},
-  'solucion_npk': {n:'Solución NPK (fertirrigación)',d:'Según análisis',c:'SOLUBLE',e:'Nutrición completa vía riego. Permite dosificación precisa y respuesta rápida.'},
-  'sulfato_amo': {n:'Sulfato Amónico 21-0-0',d:'10 kg/Ha',c:'SOLUBLE',e:'N amoniacal de absorción rápida. Acidifica ligeramente el sustrato. Efecto visible en 3-5 días. No aplicar con calor extremo.'},
-  'fosfato_mono': {n:'Fosfato Monoamónico',d:'4 kg/Ha',c:'SOLUBLE',e:'Aporta P y N solubles. Estimula enraizamiento y recuperación tras aireados. pH ácido favorece absorción.'},
-  'nitrato_pot': {n:'Nitrato Potásico 13-0-46',d:'10 kg/Ha',c:'SOLUBLE',e:'Alto en K (46%). Fortalece paredes celulares y mejora resistencia al estrés hídrico y fúngico. N nítrico de absorción rápida.'},
-  'sulfato_fe': {n:'Sulfato de Fe Soluble',d:'4 kg/Ha',c:'SOLUBLE',e:'Corrección de clorosis férrica. Mejora color y densidad foliar. Inhibe el crecimiento de Poa annua temporalmente.'},
-  'sulfato_mg': {n:'Sulfato de Mg Soluble',d:'2 kg/Ha',c:'SOLUBLE',e:'Aporta Mg, elemento clave para la clorofila. Activa enzimas fotosintéticas. Mejora color verde.'},
-  'mix_soluble': {n:'Mezcla solubles',d:'Especificar',c:'SOLUBLE',e:'Programa de fertirrigación compuesto. Especificar composición en notas.'},
-  'equiort_nut': {n:'Equiort (nutricional)',d:'20 L/Ha',c:'BIOESTIMULANTE',e:'Fe, Ca y Si de origen orgánico. Mejora síntesis de clorofila sin exceso de N.'},
-  'algae_nut': {n:'Algae Green 500',d:'Según dosis',c:'BIOESTIMULANTE',e:'Citoquininas y auxinas naturales. Estimula división celular y enraizamiento.'},
-  'otro_ab': {n:'Otro abono',d:'—',c:'OTRO',e:'Especificar en notas.'}
+
+// BD unificada: PDB (fitos) + abonos con clave propia
+const T_ABONOS = {
+  'org16-4-8':{n:'Organomineral 16-4-8',d:'100 kg/Ha',c:'ABONO',e:'Liberación lenta. N(16%) P(4%) K(8%). Base nutricional greenes primavera-verano.'},
+  'org11-0-0':{n:'Organomineral 11-0-0',d:'100 kg/Ha',c:'ABONO',e:'Nitrogenado lenta liberación. Solo N(11%). Crecimiento sin P y K.'},
+  'solucion_npk':{n:'Solución NPK (fertirrigación)',d:'Según análisis',c:'ABONO',e:'Nutrición completa vía riego. Dosificación precisa y respuesta rápida.'},
+  'sulfato_amo':{n:'Sulfato Amónico 21-0-0',d:'10 kg/Ha',c:'ABONO',e:'N amoniacal absorción rápida. Acidifica suelo. Efecto en 3-5 días.'},
+  'fosfato_mono':{n:'Fosfato Monoamónico',d:'4 kg/Ha',c:'ABONO',e:'P y N solubles. Estimula enraizamiento y recuperación post-aireado.'},
+  'nitrato_pot':{n:'Nitrato Potásico 13-0-46',d:'10 kg/Ha',c:'ABONO',e:'Alto K(46%). Resistencia estrés hídrico y fúngico. N nítrico rápido.'},
+  'sulfato_fe':{n:'Sulfato de Fe Soluble',d:'4 kg/Ha',c:'ABONO',e:'Corrección clorosis férrica. Mejora color. Inhibe Poa annua temporalmente.'},
+  'sulfato_mg':{n:'Sulfato de Mg Soluble',d:'2 kg/Ha',c:'ABONO',e:'Mg esencial para clorofila. Activa enzimas fotosintéticas.'},
+  'mix_soluble':{n:'Mezcla solubles',d:'Especificar',c:'ABONO',e:'Programa fertirrigación compuesto. Especificar en notas.'},
+  'otro_ab':{n:'Otro abono',d:'—',c:'ABONO',e:'Especificar en notas.'}
 };
 
-let caldoAbono = [];
+// Incompatibilidades adicionales fito-abono
+const T_INCOMPAT_EXTRA = [
+  {a:'cobre',b:'sulfato_fe',    niv:'⚠️ PRECAUCIÓN',   txt:'Cu²⁺ y Fe²⁺ pueden competir en solución. Verificar pH del caldo (>6 puede precipitar ambos).'},
+  {a:'agrokim',b:'sulfato_amo', niv:'⚠️ PRECAUCIÓN',   txt:'ClO₂ puede oxidar compuestos amoniacales. Añadir AGROKIM primero y esperar antes de incorporar abonos.'},
+  {a:'agrokim',b:'nitrato_pot', niv:'⚠️ PRECAUCIÓN',   txt:'Precaución: ClO₂ con nitratos en alta concentración. Preparar por separado.'},
+  {a:'thpromotor',b:'sulfato_fe',niv:'⚠️ PRECAUCIÓN',  txt:'Fe en exceso puede inhibir actividad del Trichoderma. Aplicar a dosis bajas o por separado.'},
+  {a:'renov6',b:'sulfato_fe',   niv:'⚠️ PRECAUCIÓN',   txt:'Fe en exceso puede afectar bacterias PGPR. Mantener dosis bajas si se mezclan.'},
+];
 
-function addAbono() {
-  const k = document.getElementById('ab-prod').value;
+function tGetProd(k) {
+  return PDB[k] || T_ABONOS[k] || null;
+}
+
+function tCheckIncompat(k1, k2) {
+  const r = INCOMPAT.find(r=>(r.a===k1&&r.b===k2)||(r.a===k2&&r.b===k1));
+  if(r) return r;
+  return T_INCOMPAT_EXTRA.find(r=>(r.a===k1&&r.b===k2)||(r.a===k2&&r.b===k1)) || null;
+}
+
+let tCuba = []; // array de {k, n, d, dRef, c, e}
+
+function tAddProd() {
+  const k = document.getElementById('t-psel').value;
   if(!k) return;
-  if(caldoAbono.find(p=>p.k===k)) { alert('Ya está en la lista'); return; }
-  const p = ABONOS[k];
+  if(tCuba.find(p=>p.k===k)) { alert('Ya está en la cuba'); return; }
+  const p = tGetProd(k);
+  if(!p) return;
   let nombre = p.n;
-  if(k==='otro_ab') {
-    nombre = prompt('Nombre del abono:','') || '';
+  if(k==='otro' || k==='otro_ab') {
+    nombre = prompt('Nombre del producto:','') || '';
     if(!nombre) return;
   }
-  const dosisDefault = p.d;
-  const dosis = prompt(`Dosis para ${nombre}\nReferencia: ${dosisDefault}\nEdita si aplicas dosis diferente:`, dosisDefault);
-  if(dosis===null) return;
-  caldoAbono.push({k, n:nombre, d:dosis||dosisDefault, dRef:dosisDefault, c:p.c, e:p.e});
-  document.getElementById('ab-prod').value='';
-  renderCaldoAbono();
-}
+  const dosis = prompt(`Dosis para ${nombre}\nReferencia: ${p.d}\nEdita si aplicas dosis diferente:`, p.d);
+  if(dosis === null) return;
+  tCuba.push({k, n:nombre, d:dosis||p.d, dRef:p.d, c:p.c, e:p.e});
+  document.getElementById('t-psel').value = '';
 
-function remAbono(k) { caldoAbono=caldoAbono.filter(p=>p.k!==k); renderCaldoAbono(); }
+  // Comprobar incompatibilidades con productos ya en la cuba
+  const incomps = [];
+  for(const ya of tCuba.slice(0,-1)) {
+    const inc = tCheckIncompat(ya.k, k);
+    if(inc) incomps.push({prod:ya.n, inc});
+  }
 
-function renderCaldoAbono() {
-  const lista = document.getElementById('ab-lista');
-  if(!caldoAbono.length){lista.style.display='none';return;}
-  lista.style.display='block';
-  lista.innerHTML = caldoAbono.map(p=>{
-    const dif = p.dRef && p.d !== p.dRef;
-    return`<div class="pitem">
-      <div>
-        <div class="pn">${p.n}</div>
-        <div class="pd">
-          <span class="bx bg">${p.c}</span>
-          <strong>${p.d}</strong>
-          ${dif?`<span style="color:var(--o);font-size:.62rem;margin-left:4px">(ref: ${p.dRef})</span>`:''}
-        </div>
-      </div>
-      <button class="btns btndel" onclick="remAbono('${p.k}')">✕</button>
-    </div>`;
-  }).join('');
-}
+  tRenderCuba();
+  tAutoFill();
 
-function autoAbono() {
-  // Autocompletar condiciones con datos meteo si están disponibles
-  const m = window._M;
-  if(m) {
-    const cond = document.getElementById('ab-cond');
-    if(cond && !cond.value) {
-      cond.value = `T: ${m.tmed?.toFixed(1)||'--'}°C · HR: ${Math.round(m.hum||70)}% · Lluvia: ${m.lluvia||0} mm`;
+  // Alerta inmediata si hay incompatibilidad grave
+  if(incomps.length) {
+    const graves = incomps.filter(x=>x.inc.niv.includes('INCOMPATIBLE'));
+    const precauc = incomps.filter(x=>!x.inc.niv.includes('INCOMPATIBLE'));
+    if(graves.length) {
+      const msgs = graves.map(x=>`🚫 ${x.prod}: ${x.inc.txt}`).join('\n\n');
+      alert(`⚠️ INCOMPATIBILIDAD DETECTADA\n\n${msgs}\n\nRevisa el caldo antes de continuar.`);
+    } else if(precauc.length) {
+      const msgs = precauc.map(x=>`⚠️ ${x.prod}: ${x.inc.txt}`).join('\n\n');
+      if(!confirm(`PRECAUCIÓN al mezclar con productos del caldo:\n\n${msgs}\n\n¿Continuar igualmente?`)) {
+        tCuba.pop();
+        tRenderCuba();
+        return;
+      }
     }
   }
 }
 
-function saveAbonado() {
-  if(!caldoAbono.length) return alert('Añade al menos un producto');
-  const fecha = document.getElementById('ab-fecha').value;
+function tRemProd(k) { tCuba = tCuba.filter(p=>p.k!==k); tRenderCuba(); }
+
+function tRenderCuba() {
+  const lista = document.getElementById('t-lista');
+  const ecomb = document.getElementById('t-ecomb');
+  const incompat = document.getElementById('t-incompat');
+
+  if(!tCuba.length) {
+    lista.style.display='none';
+    ecomb.style.display='none';
+    incompat.style.display='none';
+    return;
+  }
+
+  lista.style.display='block';
+  const badgeColor = {
+    'PROTECCIÓN':'br','BIOESTIMULANTE':'bg','ABONO':'bb',
+    'FUNGICIDA SÍNTESIS':'bo','PENETRANTE':'bt','REGULADOR':'bt','OTRO':''
+  };
+  lista.innerHTML = tCuba.map(p=>{
+    const dif = p.dRef && p.d !== p.dRef;
+    const bc = badgeColor[p.c]||'bb';
+    return`<div class="pitem">
+      <div>
+        <div class="pn">${p.n}</div>
+        <div class="pd">
+          <span class="bx ${bc}">${p.c}</span>
+          <strong>${p.d}</strong>
+          ${dif?`<span style="color:var(--o);font-size:.62rem;margin-left:4px">(ref: ${p.dRef})</span>`:''}
+        </div>
+      </div>
+      <button class="btns btndel" onclick="tRemProd('${p.k}')">✕</button>
+    </div>`;
+  }).join('');
+
+  // ── INCOMPATIBILIDADES ──
+  let incompHtml = '';
+  for(let i=0;i<tCuba.length;i++) {
+    for(let j=i+1;j<tCuba.length;j++) {
+      const inc = tCheckIncompat(tCuba[i].k, tCuba[j].k);
+      if(inc) {
+        const cls = inc.niv.includes('INCOMPATIBLE') ? 'al-r'
+                  : inc.niv.includes('ROTACIÓN')     ? 'al-b' : 'al-o';
+        incompHtml += `
+          <div class="al ${cls}" style="margin-bottom:6px;">
+            <div style="font-size:1.1rem;flex-shrink:0;">
+              ${inc.niv.includes('INCOMPATIBLE')?'🚫':inc.niv.includes('ROTACIÓN')?'🔄':'⚠️'}
+            </div>
+            <div>
+              <strong>${inc.niv}</strong><br>
+              <strong>${tCuba[i].n} + ${tCuba[j].n}</strong><br>
+              ${inc.txt}
+            </div>
+          </div>`;
+      }
+    }
+  }
+
+  if(incompHtml) {
+    incompat.style.display = 'block';
+    incompat.innerHTML = `
+      <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+        color:var(--r);margin-bottom:6px;">⚠️ Alertas de compatibilidad en el caldo</div>
+      ${incompHtml}`;
+  } else {
+    incompat.style.display = 'none';
+    incompat.innerHTML = '';
+  }
+
+  // ── EFECTO COMBINADO ──
+  if(tCuba.length > 1) {
+    ecomb.style.display = 'block';
+    document.getElementById('t-ecomb-txt').innerHTML = tCuba.map(p=>
+      `<div style="margin-bottom:5px;"><span class="bx ${badgeColor[p.c]||'bb'}">${p.n}</span> ${p.e}</div>`
+    ).join('');
+  } else {
+    ecomb.style.display = 'none';
+  }
+}
+
+function tAutoFill() {
+  const m = window._M;
+  if(m) {
+    const cond = document.getElementById('t-cond');
+    if(cond && !cond.value)
+      cond.value = `T: ${m.tmed?.toFixed(1)||'--'}°C · HR: ${Math.round(m.hum||70)}% · Lluvia: ${m.lluvia||0} mm`;
+  }
+}
+
+// Clasifica el tipo de cuba para el historial
+function tTipoCuba(productos) {
+  const cats = productos.map(p=>p.c);
+  const tieneAbono = cats.some(c=>c==='ABONO');
+  const tieneFito = cats.some(c=>['PROTECCIÓN','FUNGICIDA SÍNTESIS','PENETRANTE','REGULADOR','BIOESTIMULANTE'].includes(c));
+  if(tieneAbono && tieneFito) return 'mixto';
+  if(tieneAbono) return 'abono';
+  return 'fitosanitario';
+}
+
+function tSave() {
+  if(!tCuba.length) return alert('Añade al menos un producto a la cuba');
+  const fecha = document.getElementById('t-fecha').value;
   if(!fecha) return alert('La fecha es obligatoria');
-  const datos = get('abonado');
+  const datos = get('tratamientos');
   datos.unshift({
     id: Date.now(),
-    productos: [...caldoAbono],
+    productos: [...tCuba],
+    tipo: tTipoCuba(tCuba),
     fecha,
-    zona: document.getElementById('ab-zona').value,
-    superficie: document.getElementById('ab-sup').value,
-    metodo: document.getElementById('ab-metodo').value,
-    condiciones: document.getElementById('ab-cond').value,
-    objetivo: document.getElementById('ab-objetivo').value,
-    notas: document.getElementById('ab-notas').value
+    zona: document.getElementById('t-zona').value,
+    superficie: document.getElementById('t-sup').value,
+    metodo: document.getElementById('t-metodo').value,
+    condiciones: document.getElementById('t-cond').value,
+    motivo: document.getElementById('t-motivo').value,
+    notas: document.getElementById('t-notas').value,
   });
-  set('abonado', datos);
-  caldoAbono = [];
-  renderCaldoAbono();
-  ['ab-sup','ab-cond','ab-objetivo','ab-notas'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('ab-fecha').value = hoy();
-  renderAbonado();
+  set('tratamientos', datos);
+  tCuba = [];
+  tRenderCuba();
+  ['t-sup','t-cond','t-motivo','t-notas'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('t-fecha').value = hoy();
+  tRenderHistorial();
 }
 
-function delAbonado(id) {
-  if(!confirm('¿Eliminar?'))return;
-  set('abonado', get('abonado').filter(d=>d.id!==id));
-  renderAbonado();
+function tDelTratamiento(id) {
+  if(!confirm('¿Eliminar?')) return;
+  set('tratamientos', get('tratamientos').filter(d=>d.id!==id));
+  tRenderHistorial();
 }
 
-const ZONA_LABELS = {
+const T_ZONA_LABELS = {
   greenes:'Greenes',antegreenes:'Antegreenes',tees:'Tees',
-  calles:'Calles',rough:'Rough',todo:'Todo el campo'
+  calles:'Calles',rough:'Rough',todo:'Todo el campo',zonas:'Zonas específicas'
+};
+const T_TIPO_BADGE = {
+  fitosanitario:{cls:'br',lbl:'🌿 Fito'},
+  abono:{cls:'bb',lbl:'🌾 Abono'},
+  mixto:{cls:'bo',lbl:'⚗️ Mixto'}
 };
 
-function renderAbonado() {
-  const fz = document.getElementById('ab-filtro-zona').value;
-  const fa = document.getElementById('ab-filtro-anio').value;
-  let datos = get('abonado');
+function tRenderHistorial() {
+  const fz = document.getElementById('t-filtro-zona').value;
+  const ft = document.getElementById('t-filtro-tipo').value;
+  const fa = document.getElementById('t-filtro-anio').value;
+  let datos = get('tratamientos');
   if(fz) datos = datos.filter(d=>d.zona===fz);
+  if(ft) datos = datos.filter(d=>d.tipo===ft);
   if(fa) datos = datos.filter(d=>d.fecha&&d.fecha.startsWith(fa));
-  const el = document.getElementById('hist-abonado');
-  if(!datos.length){el.innerHTML='<div style="color:var(--tx2);font-size:.79rem;padding:10px 0">Sin aplicaciones de abono registradas.</div>';return;}
-  el.innerHTML = datos.map(d=>`<div class="hi"><div class="hi-top"><div>
-    <div class="hi-t">${d.productos?.map(p=>p.n).join(' + ')||'Abonado'}</div>
-    <div class="hi-m">
-      <span class="bx bb">${ZONA_LABELS[d.zona]||d.zona}</span>
-      ${d.superficie?`${d.superficie} Ha · `:''}
-      ${d.productos?.map(p=>p.d).join(' + ')}
-    </div>
-    <div class="hi-m">${d.metodo}</div>
-    ${d.objetivo?`<div class="hi-m">🎯 ${d.objetivo}</div>`:''}
-    ${d.condiciones?`<div class="hi-m">🌡 ${d.condiciones}</div>`:''}
-    ${d.notas?`<div class="hi-m">📋 ${d.notas}</div>`:''}
+  const el = document.getElementById('hist-tratamientos');
+  if(!datos.length){
+    el.innerHTML='<div style="color:var(--tx2);font-size:.79rem;padding:10px 0">Sin aplicaciones registradas.</div>';
+    return;
+  }
+  el.innerHTML = datos.map(d=>{
+    const tb = T_TIPO_BADGE[d.tipo]||{cls:'bb',lbl:'—'};
+    return`<div class="hi"><div class="hi-top"><div>
+      <div class="hi-t">${d.productos?.map(p=>p.n).join(' + ')||'Aplicación'}</div>
+      <div class="hi-m">
+        <span class="bx ${tb.cls}">${tb.lbl}</span>
+        <span class="bx bg">${T_ZONA_LABELS[d.zona]||d.zona}</span>
+        ${d.superficie?`${d.superficie} Ha · `:''}
+        ${d.productos?.map(p=>p.d).join(' · ')}
+      </div>
+      ${d.metodo?`<div class="hi-m">🔧 ${d.metodo}</div>`:''}
+      ${d.condiciones?`<div class="hi-m">🌡 ${d.condiciones}</div>`:''}
+      ${d.motivo?`<div class="hi-m">🎯 ${d.motivo}</div>`:''}
+      ${d.notas?`<div class="hi-m">📋 ${d.notas}</div>`:''}
     </div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
-    <span class="hi-f">${fmtF(d.fecha)}</span>
-    <button class="btns btndel" onclick="delAbonado(${d.id})">✕</button>
-    </div></div></div>`).join('');
+      <span class="hi-f">${fmtF(d.fecha)}</span>
+      <button class="btns btndel" onclick="tDelTratamiento(${d.id})">✕</button>
+    </div></div></div>`;
+  }).join('');
 }
+
 
 function init() {
   tickReloj(); setInterval(tickReloj, 60000);
 
-  // Event listeners para tabs — compatible iOS Safari
-  document.querySelectorAll('.tab[data-tab]').forEach(function(btn) {
-    // touchend para respuesta inmediata en iOS
-    btn.addEventListener('touchend', function(e) {
-      e.preventDefault();
-      goTab(this.dataset.tab, this);
-    });
-    // click como fallback para desktop
-    btn.addEventListener('click', function(e) {
-      goTab(this.dataset.tab, this);
-    });
-  });
-
-  // Fechas por defecto
-  ['m-fecha','f-fecha','e-fecha','s-fecha','tdr-fecha','ab-fecha'].forEach(id=>{
+  ['m-fecha','t-fecha','e-fecha','s-fecha','tdr-fecha'].forEach(id=>{
     const el=document.getElementById(id); if(el) el.value=hoy();
   });
 
-  // Cargar datos guardados
   renderMaq(); calcCostes();
-  renderFito(); renderEnf();
-  renderAbonado();
+  tRenderHistorial();
+  renderEnf();
   initGreenes(); renderSecas(); renderTDR();
-
-  // Cargar meteorología desde Open-Meteo
+  initPersonal();
   cargarOpenMeteo();
 }
 
+
+// ══════════════════════════════════════════════════════════
+//  ENFERMEDADES
+// ══════════════════════════════════════════════════════════
+//  ENFERMEDADES
+// ══════════════════════════════════════════════════════════
+function saveEnf() {
+  const fecha=document.getElementById('e-fecha').value; if(!fecha) return alert('Fecha obligatoria');
+  const datos=get('enfermedades');
+  datos.unshift({id:Date.now(),
+    tipo:document.getElementById('e-tipo').value, fecha,
+    greenes:document.getElementById('e-greenes').value,
+    severidad:document.getElementById('e-sev').value,
+    condiciones:document.getElementById('e-cond').value,
+    tratamiento:document.getElementById('e-trat').value
+  });
+  set('enfermedades',datos);
+  ['e-greenes','e-cond','e-trat'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('e-fecha').value=hoy();
+  renderEnf();
+}
+
+function delEnf(id) { if(!confirm('¿Eliminar?'))return; set('enfermedades',get('enfermedades').filter(d=>d.id!==id)); renderEnf(); }
+
+function renderEnf() {
+  const datos=get('enfermedades');
+  const el=document.getElementById('hist-enf');
+  if(!datos.length){el.innerHTML='<div style="color:var(--tx2);font-size:.79rem;padding:10px 0">Sin incidencias de enfermedad.</div>';return;}
+  const sc={leve:'bg',moderada:'bo',grave:'br'};
+  el.innerHTML=datos.map(d=>`<div class="hi"><div class="hi-top"><div>
+    <div class="hi-t">🦠 ${d.tipo} <span class="bx ${sc[d.severidad]||'bb'}">${d.severidad}</span></div>
+    ${d.greenes?`<div class="hi-m">⛳ Greenes: ${d.greenes}</div>`:''}
+    ${d.condiciones?`<div class="hi-m">🌡 ${d.condiciones}</div>`:''}
+    ${d.tratamiento?`<div class="hi-m" style="color:var(--g2)">💊 ${d.tratamiento}</div>`:''}
+    </div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+    <span class="hi-f">${fmtF(d.fecha)}</span>
+    <button class="btns btndel" onclick="delEnf(${d.id})">✕</button>
+    </div></div></div>`).join('');
+}
+
+// ══════════════════════════════════════════════════════════
+//  TDR 350
+// ══════════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════
+//  ENFERMEDADES
+// ══════════════════════════════════════════════════════════
+function saveEnf() {
+  const fecha=document.getElementById('e-fecha').value; if(!fecha) return alert('Fecha obligatoria');
+  const datos=get('enfermedades');
+  datos.unshift({id:Date.now(),tipo:document.getElementById('e-tipo').value,fecha,
+    greenes:document.getElementById('e-greenes').value,
+    severidad:document.getElementById('e-sev').value,
+    condiciones:document.getElementById('e-cond').value,
+    tratamiento:document.getElementById('e-trat').value});
+  set('enfermedades',datos);
+  ['e-greenes','e-cond','e-trat'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('e-fecha').value=hoy();
+  renderEnf();
+}
+function delEnf(id){if(!confirm('¿Eliminar?'))return;set('enfermedades',get('enfermedades').filter(d=>d.id!==id));renderEnf();}
+function renderEnf(){
+  const datos=get('enfermedades');
+  const el=document.getElementById('hist-enf');
+  if(!datos.length){el.innerHTML='<div style="color:var(--tx2);font-size:.79rem;padding:10px 0">Sin incidencias de enfermedad.</div>';return;}
+  const sc={leve:'bg',moderada:'bo',grave:'br'};
+  el.innerHTML=datos.map(d=>`<div class="hi"><div class="hi-top"><div>
+    <div class="hi-t">🦠 ${d.tipo} <span class="bx ${sc[d.severidad]||'bb'}">${d.severidad}</span></div>
+    ${d.greenes?`<div class="hi-m">⛳ Greenes: ${d.greenes}</div>`:''}
+    ${d.condiciones?`<div class="hi-m">🌡 ${d.condiciones}</div>`:''}
+    ${d.tratamiento?`<div class="hi-m" style="color:var(--g2)">💊 ${d.tratamiento}</div>`:''}
+    </div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+    <span class="hi-f">${fmtF(d.fecha)}</span>
+    <button class="btns btndel" onclick="delEnf(${d.id})">✕</button>
+    </div></div></div>`).join('');
+}
+
+//  MÓDULO PERSONAL — CONTROL DE HORAS
+// ══════════════════════════════════════════════════════════
+
+const PER_HORAS_MES = [6.5,7,7.5,8,8,8,8,8,8,7.5,7,6.5];
+const PER_FESTIVOS_RIOJA = new Set([
+  '2026-01-01','2026-01-06',
+  '2026-04-02','2026-04-03','2026-04-06',
+  '2026-05-01','2026-06-09','2026-08-15',
+  '2026-10-12','2026-12-06','2026-12-07','2026-12-25'
+]);
+const PER_MESES_ES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const PER_MAX_VAC = 23;
+
+let perMesActual = new Date().getMonth();
+
+function perGet(emp) {
+  try { return JSON.parse(localStorage.getItem('gsv3_per_'+emp)) || {incidencias:{},festivosLocales:[],vacaciones:[]}; }
+  catch { return {incidencias:{},festivosLocales:[],vacaciones:[]}; }
+}
+function perSet(emp, datos) { localStorage.setItem('gsv3_per_'+emp, JSON.stringify(datos)); }
+function perEmpActual() { return document.getElementById('per-emp').value; }
+function perAnioSel() {
+  const ini = document.getElementById('per-rango-ini');
+  return ini && ini.value ? parseInt(ini.value.slice(0,4)) : new Date().getFullYear();
+}
+
+// Atajos de rango
+function perRangoHoy() {
+  const h = new Date().toISOString().slice(0,10);
+  document.getElementById('per-rango-ini').value = h;
+  document.getElementById('per-rango-fin').value = h;
+  perCalculaRango();
+}
+function perRangoMes() {
+  const hoy = new Date();
+  const ini = perFmt(hoy.getFullYear(), hoy.getMonth(), 1);
+  const fin = perFmt(hoy.getFullYear(), hoy.getMonth(), new Date(hoy.getFullYear(), hoy.getMonth()+1, 0).getDate());
+  document.getElementById('per-rango-ini').value = ini;
+  document.getElementById('per-rango-fin').value = fin;
+  perCalculaRango();
+}
+function perRangoAnio() {
+  const y = new Date().getFullYear();
+  document.getElementById('per-rango-ini').value = `${y}-01-01`;
+  document.getElementById('per-rango-fin').value = `${y}-12-31`;
+  perCalculaRango();
+}
+
+function perCalculaRango() {
+  const emp = perEmpActual();
+  const ini = document.getElementById('per-rango-ini').value;
+  const fin = document.getElementById('per-rango-fin').value;
+  if(!ini || !fin || fin < ini) return;
+  const datos = perGet(emp);
+  const {incidencias, festivosLocales, vacaciones} = {
+    incidencias: datos.incidencias||{},
+    festivosLocales: datos.festivosLocales||[],
+    vacaciones: datos.vacaciones||[]
+  };
+  let totalH=0, totalFest=0, totalBajas=0;
+  const hoyStr = new Date().toISOString().slice(0,10);
+  let cur = new Date(ini+'T12:00:00');
+  const end = new Date(fin+'T12:00:00');
+  while(cur <= end) {
+    const fStr = cur.toISOString().slice(0,10);
+    if(fStr <= hoyStr) {
+      const dow = cur.getDay();
+      const mes = cur.getMonth();
+      const r = perCalculaDia(fStr, dow, mes, incidencias, festivosLocales, vacaciones);
+      totalH += r.horas;
+      if(r.tipo==='festivo_trab') totalFest++;
+      if(r.tipo==='ausencia') totalBajas++;
+    }
+    cur.setDate(cur.getDate()+1);
+  }
+  const dias = Math.round((new Date(fin+'T12:00:00')-new Date(ini+'T12:00:00'))/(1000*60*60*24))+1;
+  const lbl = dias === 1 ? 'Horas ese día' : `Horas (${dias} días)`;
+  const lblEl = document.getElementById('per-lbl-rango');
+  if(lblEl) lblEl.textContent = lbl;
+  document.getElementById('per-horas-año').textContent = totalH.toFixed(1);
+  document.getElementById('per-festivos-trab').textContent = totalFest;
+  document.getElementById('per-bajas').textContent = totalBajas;
+}
+function perFmt(y,m,d) { return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
+
+function perEsFestivo(fStr, festivosLocales) {
+  if(PER_FESTIVOS_RIOJA.has(fStr)) return true;
+  return (festivosLocales||[]).some(f => f.fecha === fStr);
+}
+
+// Devuelve true si la fecha cae dentro de algún bloque de vacaciones
+function perEsVacaciones(fStr, vacaciones) {
+  return (vacaciones||[]).some(v => fStr >= v.inicio && fStr <= v.fin);
+}
+
+// Cuenta días laborables (L-V, no festivo Rioja, no local) dentro de un bloque de vacaciones
+function perDiasLaborablesBloque(inicio, fin, festivosLocales) {
+  let count = 0;
+  let cur = new Date(inicio);
+  const end = new Date(fin);
+  while(cur <= end) {
+    const dow = cur.getDay();
+    const fStr = cur.toISOString().slice(0,10);
+    if(dow !== 0 && dow !== 6 && !perEsFestivo(fStr, festivosLocales)) count++;
+    cur.setDate(cur.getDate()+1);
+  }
+  return count;
+}
+
+// Total días de vacaciones laborables usados
+function perDiasVacUsados(vacaciones, festivosLocales) {
+  return (vacaciones||[]).reduce((s,v) => s + perDiasLaborablesBloque(v.inicio, v.fin, festivosLocales), 0);
+}
+
+function perHorasBase(mes) { return PER_HORAS_MES[mes]; }
+
+function perCalculaDia(fStr, dow, mes, incidencias, festivosLocales, vacaciones) {
+  const inc = incidencias[fStr];
+  const esFestivo = perEsFestivo(fStr, festivosLocales);
+  const esVac = perEsVacaciones(fStr, vacaciones);
+  const esFinde = (dow === 0 || dow === 6);
+  const hBase = perHorasBase(mes);
+
+  if(inc && (inc.tipo==='baja'||inc.tipo==='fiesta'||inc.tipo==='ausencia'))
+    return {horas:0, tipo:'ausencia', label:inc.tipo};
+
+  if(esFestivo) {
+    if(inc && inc.tipo==='trabajado') {
+      const h = inc.horas||hBase;
+      return {horas:h*1.75, tipo:'festivo_trab', label:`${h}h×1.75`};
+    }
+    return {horas:0, tipo:'festivo_libre', label:'Festivo'};
+  }
+
+  if(esFinde) {
+    if(inc && inc.tipo==='trabajado') {
+      const h = inc.horas||hBase;
+      const mult = dow===6?1.5:1.75;
+      return {horas:h*mult, tipo:'finde', label:`${h}h×${mult}`};
+    }
+    return {horas:0, tipo:'libre', label:'Descanso'};
+  }
+
+  // Vacaciones — día laborable dentro de bloque de vacaciones
+  if(esVac) return {horas:0, tipo:'vacaciones', label:'Vacaciones'};
+
+  return {horas:hBase, tipo:'normal', label:`${hBase}h`};
+}
+
+function perCambiaEmpleado() { perMesActual=new Date().getMonth(); perRenderCalendario(); }
+function perMesAnterior() { perMesActual--; if(perMesActual<0) perMesActual=11; perRenderCalendario(); }
+function perMesSiguiente() { perMesActual++; if(perMesActual>11) perMesActual=0; perRenderCalendario(); }
+
+function perRenderCalendario() {
+  const emp = perEmpActual();
+  const anio = perAnioSel();
+  const datos = perGet(emp);
+  if(!datos.vacaciones) datos.vacaciones=[];
+  if(!datos.festivosLocales) datos.festivosLocales=[];
+  const {incidencias, festivosLocales, vacaciones} = datos;
+
+  document.getElementById('per-nombre-local').textContent = emp;
+  document.getElementById('per-mes-titulo').textContent = `${PER_MESES_ES[perMesActual]} ${anio}`;
+
+  perRenderFestivosLocales(festivosLocales, emp);
+  perRenderVacaciones(vacaciones, festivosLocales, emp);
+  perActualizaContadores(festivosLocales, vacaciones);
+
+  const hoy = new Date();
+  const hoyStr = perFmt(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+  const cal = document.getElementById('per-calendario');
+  const diasSem = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+  let html = diasSem.map(d=>`<div style="text-align:center;font-size:.6rem;font-weight:700;color:var(--tx2);padding:4px 0;text-transform:uppercase;">${d}</div>`).join('');
+
+  let dow1 = new Date(anio, perMesActual, 1).getDay();
+  dow1 = dow1===0?6:dow1-1;
+  for(let i=0;i<dow1;i++) html+='<div></div>';
+
+  const diasMes = new Date(anio, perMesActual+1, 0).getDate();
+  let horasMes=0,diasNorm=0,diasFinde=0,diasFest=0,diasAus=0,diasVac=0;
+
+  for(let d=1;d<=diasMes;d++) {
+    const fStr = perFmt(anio, perMesActual, d);
+    const dow = new Date(anio, perMesActual, d).getDay();
+    const esFuturo = fStr > hoyStr;
+    const esHoy = fStr === hoyStr;
+
+    let bg,border,emoji,labelH,horas=0;
+
+    if(esFuturo && !incidencias[fStr] && !perEsVacaciones(fStr,vacaciones)) {
+      bg='#f5f5f0'; border='#ddd'; emoji=''; labelH='—';
+    } else {
+      const r = perCalculaDia(fStr, dow, perMesActual, incidencias, festivosLocales, vacaciones);
+      horas=r.horas; horasMes+=horas; labelH=r.label;
+      if(r.tipo==='ausencia')      {bg='#fde8e8';border='var(--r)';emoji='🔴';diasAus++;}
+      else if(r.tipo==='vacaciones'){bg='#ede0f5';border='#9b59b6';emoji='🏖';diasVac++;}
+      else if(r.tipo==='festivo_trab'){bg='#fef0dc';border='var(--o)';emoji='⭐';diasFest++;}
+      else if(r.tipo==='festivo_libre'){bg='#ddeeff';border='var(--a)';emoji='⭐';}
+      else if(r.tipo==='finde')    {bg='#fef0dc';border='var(--o)';emoji='🟠';diasFinde++;}
+      else if(r.tipo==='libre')    {bg='#f2f2f2';border='#ccc';emoji='⬜';}
+      else                         {bg='#e6f5dc';border='var(--g4)';emoji='';diasNorm++;}
+    }
+
+    html+=`<div onclick="perClickDia('${fStr}','${emp}')" style="
+      background:${bg};border:${esHoy?'2.5px':'1px'} solid ${border};border-radius:8px;
+      padding:5px 3px;text-align:center;cursor:pointer;min-height:56px;
+      display:flex;flex-direction:column;justify-content:space-between;
+      ${esHoy?'box-shadow:0 0 0 2px var(--g3);':''}
+    ">
+      <div style="font-family:'DM Mono',monospace;font-size:.75rem;font-weight:${esHoy?'700':'400'};color:${esHoy?'var(--g1)':'var(--tx)'};">${d}</div>
+      <div style="font-size:.85rem;">${emoji}</div>
+      <div style="font-size:.55rem;color:var(--tx2);line-height:1.2;">${labelH}</div>
+    </div>`;
+  }
+  cal.innerHTML = html;
+
+  document.getElementById('per-horas-mes').textContent = horasMes.toFixed(1);
+  document.getElementById('per-resumen-mes').innerHTML = `
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:6px;">
+      <div class="mb"><div class="mb-v">${diasNorm}</div><div class="mb-l">Días normales</div></div>
+      <div class="mb"><div class="mb-v">${diasFinde}</div><div class="mb-l">Findes trabajados</div></div>
+      <div class="mb"><div class="mb-v">${diasVac}</div><div class="mb-l">Días vacaciones</div></div>
+      <div class="mb"><div class="mb-v">${diasAus}</div><div class="mb-l">Ausencias/bajas</div></div>
+    </div>
+    <div style="margin-top:10px;padding:10px;background:var(--g5);border-radius:9px;text-align:center;">
+      <span style="font-family:'DM Mono',monospace;font-size:1.4rem;color:var(--g1);font-weight:600;">${horasMes.toFixed(1)} h</span>
+      <div style="font-size:.67rem;color:var(--g2);margin-top:2px;">Total horas ${PER_MESES_ES[perMesActual]}</div>
+    </div>`;
+
+  perCalculaAnio(emp, anio, incidencias, festivosLocales, vacaciones);
+  perRenderGlobal();
+}
+
+function perActualizaContadores(festivosLocales, vacaciones) {
+  document.getElementById('per-cnt-locales').textContent = `${(festivosLocales||[]).length}/2`;
+  const usados = perDiasVacUsados(vacaciones, festivosLocales);
+  const el = document.getElementById('per-cnt-vac');
+  el.textContent = `${usados}/${PER_MAX_VAC}`;
+  el.style.color = usados > PER_MAX_VAC ? 'var(--r)' : usados >= PER_MAX_VAC*0.9 ? 'var(--o)' : '';
+}
+
+function perCalculaAnio(emp, anio, incidencias, festivosLocales, vacaciones) {
+  perCalculaRango();
+}
+
+function perClickDia(fStr, emp) {
+  const datos = perGet(emp);
+  if(!datos.vacaciones) datos.vacaciones=[];
+  const {incidencias, festivosLocales, vacaciones} = datos;
+  const fecha = new Date(fStr);
+  const dow = fecha.getDay();
+  const esFinde = (dow===0||dow===6);
+  const esFestivo = perEsFestivo(fStr, festivosLocales);
+  const esVac = perEsVacaciones(fStr, vacaciones);
+  const mes = fecha.getMonth();
+  const hBase = perHorasBase(mes);
+  const inc = incidencias[fStr];
+
+  let sel;
+  if(esFinde || esFestivo) {
+    sel = prompt(`📅 ${fStr} · ${emp}\n\n1 — Trabajado\n2 — Descanso (no trabajado)\n3 — Baja / ausencia\n4 — Borrar incidencia`);
+    if(sel==='1') {
+      const h = parseFloat(prompt(`Horas trabajadas (base ${hBase}h):`, hBase));
+      if(isNaN(h)) return;
+      incidencias[fStr]={tipo:'trabajado',horas:h};
+    } else if(sel==='2') { delete incidencias[fStr]; }
+    else if(sel==='3') { incidencias[fStr]={tipo:'baja',motivo:prompt('Motivo:','baja')||'baja'}; }
+    else if(sel==='4') { delete incidencias[fStr]; }
+    else return;
+  } else {
+    sel = prompt(`📅 ${fStr} · ${emp}\n\n1 — Normal (${hBase}h automático)\n2 — Inicio de vacaciones\n3 — Fin de vacaciones\n4 — Baja médica\n5 — Fiesta / día libre\n6 — Ausencia otra causa\n7 — Borrar incidencia`);
+    if(sel==='1') { delete incidencias[fStr]; perQuitarDeVacaciones(fStr, vacaciones); }
+    else if(sel==='2') {
+      // Inicia bloque vacaciones desde este día
+      const finStr = prompt('¿Hasta qué fecha? (YYYY-MM-DD)', fStr);
+      if(!finStr || finStr < fStr) return alert('Fecha fin incorrecta');
+      const dias = perDiasLaborablesBloque(fStr, finStr, festivosLocales);
+      const usados = perDiasVacUsados(vacaciones, festivosLocales);
+      if(usados + dias > PER_MAX_VAC) {
+        if(!confirm(`⚠️ Con este bloque usarías ${usados+dias}/${PER_MAX_VAC} días. ¿Continuar igualmente?`)) return;
+      }
+      vacaciones.push({inicio:fStr, fin:finStr});
+    }
+    else if(sel==='3') {
+      // Fin de vacaciones: cierra el último bloque abierto que incluya este día o anterior
+      const bloq = vacaciones.find(v => v.inicio <= fStr && (!v.fin || v.fin >= fStr));
+      if(bloq) { bloq.fin = fStr; }
+      else alert('No hay bloque de vacaciones abierto para cerrar en esta fecha.');
+    }
+    else if(sel==='4') { incidencias[fStr]={tipo:'baja',motivo:'baja médica'}; }
+    else if(sel==='5') { incidencias[fStr]={tipo:'fiesta',motivo:'fiesta'}; }
+    else if(sel==='6') { incidencias[fStr]={tipo:'ausencia',motivo:prompt('Motivo:','ausencia')||'ausencia'}; }
+    else if(sel==='7') { delete incidencias[fStr]; perQuitarDeVacaciones(fStr, vacaciones); }
+    else return;
+  }
+
+  datos.incidencias = incidencias;
+  datos.vacaciones = vacaciones;
+  perSet(emp, datos);
+  perRenderCalendario();
+}
+
+function perQuitarDeVacaciones(fStr, vacaciones) {
+  // Si cae dentro de un bloque, elimina ese bloque
+  const idx = vacaciones.findIndex(v => fStr >= v.inicio && fStr <= v.fin);
+  if(idx >= 0) vacaciones.splice(idx,1);
+}
+
+function perAddFestivoLocal() {
+  const fecha = document.getElementById('per-fl-fecha').value;
+  const nombre = document.getElementById('per-fl-nombre').value.trim();
+  if(!fecha||!nombre) return alert('Introduce fecha y nombre del festivo');
+  const emp = perEmpActual();
+  const datos = perGet(emp);
+  if(!datos.festivosLocales) datos.festivosLocales=[];
+  if(datos.festivosLocales.length>=2) return alert('Máximo 2 festivos locales por empleado');
+  if(datos.festivosLocales.find(f=>f.fecha===fecha)) return alert('Fecha ya registrada');
+  datos.festivosLocales.push({fecha,nombre});
+  perSet(emp,datos);
+  document.getElementById('per-fl-fecha').value='';
+  document.getElementById('per-fl-nombre').value='';
+  perRenderCalendario();
+}
+
+function perDelFestivoLocal(fecha) {
+  const emp = perEmpActual();
+  const datos = perGet(emp);
+  datos.festivosLocales = datos.festivosLocales.filter(f=>f.fecha!==fecha);
+  perSet(emp,datos);
+  perRenderCalendario();
+}
+
+function perRenderFestivosLocales(festivosLocales) {
+  const el = document.getElementById('per-festivos-locales-lista');
+  if(!festivosLocales||!festivosLocales.length) {
+    el.innerHTML='<div style="font-size:.75rem;color:var(--tx2);padding:4px 0 8px;">Sin festivos locales registrados.</div>';
+    return;
+  }
+  el.innerHTML = festivosLocales.map(f=>
+    `<div class="pitem"><div><span class="bx bb">${f.fecha}</span> ${f.nombre}</div>
+     <button class="btns btndel" onclick="perDelFestivoLocal('${f.fecha}')">✕</button></div>`
+  ).join('');
+}
+
+function perAddVacaciones() {
+  const inicio = document.getElementById('per-vac-inicio').value;
+  const fin = document.getElementById('per-vac-fin').value;
+  if(!inicio||!fin) return alert('Selecciona fecha de inicio y fin');
+  if(fin<inicio) return alert('La fecha de fin debe ser posterior al inicio');
+  const emp = perEmpActual();
+  const datos = perGet(emp);
+  if(!datos.vacaciones) datos.vacaciones=[];
+  const dias = perDiasLaborablesBloque(inicio, fin, datos.festivosLocales||[]);
+  const usados = perDiasVacUsados(datos.vacaciones, datos.festivosLocales||[]);
+  if(usados+dias > PER_MAX_VAC) {
+    if(!confirm(`⚠️ Con este bloque usarías ${usados+dias}/${PER_MAX_VAC} días. ¿Continuar igualmente?`)) return;
+  }
+  datos.vacaciones.push({inicio,fin});
+  perSet(emp,datos);
+  document.getElementById('per-vac-inicio').value='';
+  document.getElementById('per-vac-fin').value='';
+  perRenderCalendario();
+}
+
+function perDelVacaciones(idx) {
+  const emp = perEmpActual();
+  const datos = perGet(emp);
+  datos.vacaciones.splice(idx,1);
+  perSet(emp,datos);
+  perRenderCalendario();
+}
+
+function perRenderVacaciones(vacaciones, festivosLocales) {
+  const el = document.getElementById('per-vacaciones-lista');
+  if(!vacaciones||!vacaciones.length) {
+    el.innerHTML='<div style="font-size:.75rem;color:var(--tx2);padding:4px 0;">Sin vacaciones registradas.</div>';
+    return;
+  }
+  const total = perDiasVacUsados(vacaciones, festivosLocales);
+  el.innerHTML = vacaciones.map((v,i)=>{
+    const dias = perDiasLaborablesBloque(v.inicio, v.fin, festivosLocales);
+    return `<div class="pitem">
+      <div>
+        <span class="bx" style="background:#ede0f5;color:#7d3c98;">🏖 ${v.inicio} → ${v.fin}</span>
+        <span style="font-size:.75rem;color:var(--tx2);margin-left:4px;">${dias} días laborables</span>
+      </div>
+      <button class="btns btndel" onclick="perDelVacaciones(${i})">✕</button>
+    </div>`;
+  }).join('') +
+  `<div style="font-size:.75rem;font-weight:600;color:${total>PER_MAX_VAC?'var(--r)':total>=PER_MAX_VAC*0.9?'var(--o)':'var(--g2)'};padding:8px 4px;">
+    Total usado: ${total} / ${PER_MAX_VAC} días laborables
+  </div>`;
+}
+
+function initPersonal() {
+  perMesActual = new Date().getMonth();
+  perGlobalMes = new Date().getMonth();
+  perGlobalAnio = new Date().getFullYear();
+  // Inicializar rango con el año actual
+  const y = new Date().getFullYear();
+  const ini = document.getElementById('per-rango-ini');
+  const fin = document.getElementById('per-rango-fin');
+  if(ini && !ini.value) ini.value = `${y}-01-01`;
+  if(fin && !fin.value) fin.value = new Date().toISOString().slice(0,10);
+  perRenderCalendario();
+  perRenderGlobal();
+}
+
+document.addEventListener('DOMContentLoaded', () => { initPersonal(); });
+
+
+// ══════════════════════════════════════════════════════════
+//  VISTA GLOBAL TODOS LOS EMPLEADOS
+// ══════════════════════════════════════════════════════════
+const PER_EMP_LIST = ['Omar','Victor','Iker','Francisco','Rene'];
+let perGlobalMes = new Date().getMonth();
+let perGlobalAnio = new Date().getFullYear();
+
+function perGlobalAnterior() {
+  perGlobalMes--;
+  if(perGlobalMes < 0) { perGlobalMes = 11; perGlobalAnio--; }
+  perRenderGlobal();
+}
+function perGlobalSiguiente() {
+  perGlobalMes++;
+  if(perGlobalMes > 11) { perGlobalMes = 0; perGlobalAnio++; }
+  perRenderGlobal();
+}
+
+function perTipoColor(tipo) {
+  if(tipo==='normal')        return {bg:'#e6f5dc',bd:'var(--g4)',ico:'✅'};
+  if(tipo==='festivo_trab')  return {bg:'#fef0dc',bd:'var(--o)',ico:'⭐'};
+  if(tipo==='festivo_libre') return {bg:'#ddeeff',bd:'var(--a)',ico:'⭐'};
+  if(tipo==='vacaciones')    return {bg:'#ede0f5',bd:'#9b59b6',ico:'🏖'};
+  if(tipo==='finde')         return {bg:'#fef0dc',bd:'var(--o)',ico:'🟠'};
+  if(tipo==='ausencia')      return {bg:'#fde8e8',bd:'var(--r)',ico:'🔴'};
+  if(tipo==='libre')         return {bg:'#f2f2f2',bd:'#ccc',ico:'⬜'};
+  return                            {bg:'#f5f5f0',bd:'#ddd',ico:''};
+}
+
+function perRenderGlobal() {
+  const titulo = document.getElementById('per-global-titulo');
+  if(!titulo) return;
+  titulo.textContent = `👥 Todo el equipo — ${PER_MESES_ES[perGlobalMes]} ${perGlobalAnio}`;
+
+  const hoy = new Date();
+  const hoyStr = perFmt(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+  const diasMes = new Date(perGlobalAnio, perGlobalMes+1, 0).getDate();
+
+  // Cabecera: nombres empleados + días
+  // Layout: columna fija con nombre | columnas por día
+  const colW = 28; // px por día
+  const nomW = 72; // px nombre
+
+  let html = `<div style="min-width:${nomW + diasMes*colW + diasMes*2}px;">`;
+
+  // Fila cabecera días
+  html += `<div style="display:flex;margin-bottom:3px;">`;
+  html += `<div style="width:${nomW}px;flex-shrink:0;"></div>`;
+  for(let d=1; d<=diasMes; d++) {
+    const fStr = perFmt(perGlobalAnio, perGlobalMes, d);
+    const dow = new Date(perGlobalAnio, perGlobalMes, d).getDay();
+    const esFinde = dow===0||dow===6;
+    const esHoy = fStr===hoyStr;
+    html += `<div style="width:${colW}px;flex-shrink:0;text-align:center;font-family:'DM Mono',monospace;font-size:.55rem;
+      font-weight:${esHoy?'700':'400'};color:${esHoy?'var(--g1)':esFinde?'var(--a)':'var(--tx2)'};
+      border-bottom:${esHoy?'2px solid var(--g3)':'1px solid transparent'};padding-bottom:2px;">
+      ${d}
+    </div>`;
+  }
+  html += '</div>';
+
+  // Fila por empleado
+  for(const emp of PER_EMP_LIST) {
+    const datos = perGet(emp);
+    const {incidencias, festivosLocales, vacaciones} = {
+      incidencias: datos.incidencias||{},
+      festivosLocales: datos.festivosLocales||[],
+      vacaciones: datos.vacaciones||[]
+    };
+
+    html += `<div style="display:flex;align-items:center;margin-bottom:3px;">`;
+    html += `<div style="width:${nomW}px;flex-shrink:0;font-size:.7rem;font-weight:600;color:var(--g1);
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:4px;">${emp}</div>`;
+
+    for(let d=1; d<=diasMes; d++) {
+      const fStr = perFmt(perGlobalAnio, perGlobalMes, d);
+      const dow = new Date(perGlobalAnio, perGlobalMes, d).getDay();
+      const esFuturo = fStr > hoyStr;
+      const esHoy = fStr === hoyStr;
+
+      let tipo = 'futuro';
+      if(!esFuturo || incidencias[fStr] || perEsVacaciones(fStr, vacaciones)) {
+        const r = perCalculaDia(fStr, dow, perGlobalMes, incidencias, festivosLocales, vacaciones);
+        tipo = r.tipo;
+      }
+
+      const {bg, bd, ico} = perTipoColor(tipo);
+      html += `<div title="${emp} · ${fStr}" style="width:${colW}px;flex-shrink:0;height:26px;
+        background:${bg};border:1px solid ${bd};border-radius:5px;margin:0 1px;
+        display:flex;align-items:center;justify-content:center;font-size:.7rem;
+        ${esHoy?'box-shadow:0 0 0 1.5px var(--g3);':''}
+        cursor:default;">${ico}</div>`;
+    }
+    html += '</div>';
+  }
+
+  // Fila resumen: cuántos trabajan cada día
+  html += `<div style="display:flex;align-items:center;margin-top:4px;border-top:1px solid var(--bd);padding-top:4px;">`;
+  html += `<div style="width:${nomW}px;flex-shrink:0;font-size:.6rem;color:var(--tx2);font-weight:700;">CAMPO</div>`;
+  for(let d=1; d<=diasMes; d++) {
+    const fStr = perFmt(perGlobalAnio, perGlobalMes, d);
+    const dow = new Date(perGlobalAnio, perGlobalMes, d).getDay();
+    const esFuturo = fStr > hoyStr;
+    if(esFuturo) {
+      html += `<div style="width:${colW}px;flex-shrink:0;margin:0 1px;height:20px;"></div>`;
+      continue;
+    }
+    let trabajan = 0;
+    for(const emp of PER_EMP_LIST) {
+      const datos = perGet(emp);
+      const r = perCalculaDia(fStr, dow, perGlobalMes,
+        datos.incidencias||{}, datos.festivosLocales||[], datos.vacaciones||[]);
+      if(r.tipo==='normal'||r.tipo==='finde'||r.tipo==='festivo_trab') trabajan++;
+    }
+    const color = trabajan>=4?'var(--g2)':trabajan>=3?'var(--o)':trabajan<=1?'var(--r)':'var(--t)';
+    html += `<div style="width:${colW}px;flex-shrink:0;margin:0 1px;height:20px;border-radius:4px;
+      background:${color};display:flex;align-items:center;justify-content:center;
+      font-family:'DM Mono',monospace;font-size:.6rem;font-weight:700;color:#fff;">${trabajan}</div>`;
+  }
+  html += '</div>';
+  html += '</div>'; // min-width wrapper
+
+  document.getElementById('per-global-grid').innerHTML = html;
+}
+
+
 document.addEventListener('DOMContentLoaded', init);
+
 </script>
 
 </body>
