@@ -23,8 +23,7 @@
   --tap:48px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-size:15px;min-height:100vh;
-  padding-bottom:env(safe-area-inset-bottom);}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-size:15px;min-height:100vh;padding-bottom:env(safe-area-inset-bottom);}
 *{-webkit-tap-highlight-color:transparent;}
 html{-webkit-text-size-adjust:100%;}
 
@@ -41,14 +40,14 @@ html{-webkit-text-size-adjust:100%;}
 
 /* TABS */
 .tabs{display:flex;border-top:1px solid rgba(255,255,255,.1);overflow-x:hidden;}
-.tab{flex:1;padding:8px 2px;background:none;border:none;color:rgba(255,255,255,.55);
+.tab{flex:1;padding:7px 1px;background:none;border:none;color:rgba(255,255,255,.55);
 font-family:‘DM Sans’,sans-serif;font-weight:700;cursor:pointer;
 border-bottom:3px solid transparent;transition:all .15s;
-display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:48px;}
+display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:46px;}
 .tab.on{color:#fff;border-bottom-color:var(–g4);}
-.tab-ico{font-size:1.3rem;line-height:1;}
-.tab-lbl{display:none;}
-@media(min-width:500px){.tab-lbl{display:block;font-size:.55rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}.tab-ico{font-size:1rem;}.tab{padding:10px 4px;}}
+.tab-ico{font-size:1.2rem;line-height:1;}
+.tab-lbl{display:none;font-size:.5rem;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;}
+@media(min-width:500px){.tab-lbl{display:block;}.tab-ico{font-size:.95rem;}.tab{padding:10px 3px;}}
 
 /* PÁGINAS */
 .pg{display:none;padding:12px;max-width:860px;margin:0 auto;animation:fi .2s ease;}
@@ -58,7 +57,6 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;gap
 /* CARD */
 .card{background:#ffffff;border-radius:var(–rad);padding:0;box-shadow:var(–sh);border:1.5px solid #c8e0b0;margin-bottom:12px;overflow:hidden;}
 .ch{font-family:‘Playfair Display’,serif;font-size:.9rem;color:#2d5a1a;margin:0;padding:11px 13px;display:flex;align-items:center;gap:8px;background:#e8f5d8;border-bottom:1.5px solid #c8e0b0;}
-.card-body{padding:14px 13px;}
 
 /* GRIDS METEO */
 .mg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:11px;}
@@ -73,7 +71,7 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;gap
 .mb-l{font-size:.6rem;color:var(–tx2);margin-top:3px;text-transform:uppercase;}
 
 /* ETO */
-.eg{display:grid;grid-template-columns:repeat(10,minmax(72px,1fr));gap:5px;margin-top:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
+.eg{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:5px;margin-top:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
 .ed{border:1.5px solid #b0d090;border-radius:9px;padding:10px;text-align:center;background:#f8fdf4;}
 .ed.hoy{background:#d4f0b8;border-color:#5a9a30;border-width:2px;}
 .ed .f{font-size:.55rem;color:var(–tx2);text-transform:uppercase;}
@@ -109,7 +107,7 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;gap
 .fr label{display:block;font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(–tx2);margin-bottom:4px;}
 .fr input,.fr select,.fr textarea{width:100%;padding:9px 11px;border:1.5px solid var(–bd);border-radius:9px;
 font-family:‘DM Sans’,sans-serif;font-size:.84rem;background:var(–bg);color:var(–tx);transition:border-color .2s;}
-.fr input:focus,.fr select:focus,.fr textarea:focus{outline:none;border-color:#5a9a30;background:#fff;}
+.fr input:focus,.fr select:focus,.fr textarea:focus{outline:none;border-color:var(–g3);}
 .fr textarea{min-height:62px;resize:vertical;}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 @media(max-width:380px){.fg{grid-template-columns:1fr;}}
@@ -126,7 +124,7 @@ font-size:.79rem;color:var(–g1);margin-bottom:11px;display:none;line-height:1.
 
 /* BOTONES */
 .btn{padding:14px 22px;border:none;border-radius:11px;font-family:‘DM Sans’,sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .15s;min-height:var(–tap);width:100%;margin-top:6px;}
-.btng{background:#2d5a1a;color:#fff;}.btng:hover{background:#4a8a28;}.btng:active{opacity:.85;}
+.btng{background:#2d5a1a;color:#fff;}.btng:hover,.btng:active{background:#4a8a28;}
 .btns{padding:9px 14px;font-size:.75rem;border:none;border-radius:8px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:600;min-height:40px;}
 .btndel{background:var(–rl);color:var(–r);}
 
@@ -178,9 +176,10 @@ font-size:.79rem;color:var(–g1);margin-bottom:11px;display:none;line-height:1.
 /* ══ MÓVIL EXTRA ══ */
 @media(max-width:480px){
 .fg{grid-template-columns:1fr !important;}
-.ch{font-size:.86rem;}
+.ch{font-size:.84rem;}
 .btn{font-size:.9rem;}
 select option{font-size:16px;}
+.cg{grid-template-columns:repeat(2,1fr);}
 }
 input,select,textarea{font-size:max(16px,1em)!important;}
 .eg::-webkit-scrollbar,.pv::-webkit-scrollbar{display:none;}
@@ -189,7 +188,6 @@ input,select,textarea{font-size:max(16px,1em)!important;}
 .tab:active{opacity:.7;}
 .gb:active{transform:scale(.94);}
 .btns:active{opacity:.75;}
-.st{color:#5a8a38 !important;border-bottom:2px solid #c8e0b0 !important;}
 </style>
 
 </head>
@@ -210,7 +208,7 @@ input,select,textarea{font-size:max(16px,1em)!important;}
     <button class="tab" data-tab="tratamientos"><span class="tab-ico">🌿</span><span class="tab-lbl">Tratam.</span></button>
     <button class="tab" data-tab="enfermedades"><span class="tab-ico">🦠</span><span class="tab-lbl">Enfermed.</span></button>
     <button class="tab" data-tab="riego"><span class="tab-ico">💧</span><span class="tab-lbl">Riego</span></button>
-    <button class="tab" data-tab="personal"><span class="tab-ico">👤</span><span class="tab-lbl">Personal</span></button>
+    <button class="tab" data-tab="personal"><span class="tab-ico">👷</span><span class="tab-lbl">Personal</span></button>
   </div>
 </div>
 
@@ -1429,6 +1427,7 @@ function renderSecas() {
 
 function init() {
   tickReloj(); setInterval(tickReloj, 60000);
+  // iOS touch fix para tabs
   document.querySelectorAll('.tab[data-tab]').forEach(function(btn){
     btn.addEventListener('touchend',function(e){e.preventDefault();goTab(this.dataset.tab,this);});
     btn.addEventListener('click',function(e){goTab(this.dataset.tab,this);});
@@ -1703,20 +1702,7 @@ function tRenderHistorial() {
 }
 
 
-function init() {
-  tickReloj(); setInterval(tickReloj, 60000);
-
-  ['m-fecha','t-fecha','e-fecha','s-fecha','tdr-fecha'].forEach(id=>{
-    const el=document.getElementById(id); if(el) el.value=hoy();
-  });
-
-  renderMaq(); calcCostes();
-  tRenderHistorial();
-  renderEnf();
-  initGreenes(); renderSecas(); renderTDR();
-  initPersonal();
-  cargarOpenMeteo();
-}
+// init() consolidada arriba
 
 
 // ══════════════════════════════════════════════════════════
